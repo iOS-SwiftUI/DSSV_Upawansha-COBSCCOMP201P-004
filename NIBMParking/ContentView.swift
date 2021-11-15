@@ -1,0 +1,21 @@
+//
+//  ContentView.swift
+//  NIBMParking
+//
+//  Created by Shanuri Vimansa on 2021-11-14.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        
+        BottomTabBar()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
