@@ -21,6 +21,8 @@
 		8CAFF1EF27422AAC00969B52 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1EE27422AAC00969B52 /* ProfileView.swift */; };
 		8CAFF1F12742331F00969B52 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F02742331F00969B52 /* CustomTextField.swift */; };
 		8CAFF1F32742353A00969B52 /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */; };
+		8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */; };
+		8CAFF1F92742956C00969B52 /* SlotComponentVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		8CAFF1EE27422AAC00969B52 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8CAFF1F02742331F00969B52 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
+		8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotComponentHorizontal.swift; sourceTree = "<group>"; };
+		8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotComponentVertical.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 				8CAFF1E22742244500969B52 /* CustomHeader.swift */,
 				8CAFF1F02742331F00969B52 /* CustomTextField.swift */,
 				8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */,
+				8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */,
+				8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */,
 			);
 			name = Shared;
 			path = Auth;
@@ -246,8 +252,10 @@
 				8CA6851327414BA400405DE9 /* LoginView.swift in Sources */,
 				8CAFF1EF27422AAC00969B52 /* ProfileView.swift in Sources */,
 				8CAFF1DB27417CAA00969B52 /* SignUpView.swift in Sources */,
+				8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */,
 				8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */,
 				8CAFF1DF2742140700969B52 /* ColorConstants.swift in Sources */,
+				8CAFF1F92742956C00969B52 /* SlotComponentVertical.swift in Sources */,
 				8CAFF1E32742244500969B52 /* CustomHeader.swift in Sources */,
 				8CAFF1D827417C8400969B52 /* ForgotPasswordView.swift in Sources */,
 				8CAFF1E92742295500969B52 /* BottomTabBar.swift in Sources */,
