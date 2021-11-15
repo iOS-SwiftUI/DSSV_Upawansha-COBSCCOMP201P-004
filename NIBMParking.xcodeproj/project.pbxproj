@@ -12,6 +12,7 @@
 		8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA6850827413E0000405DE9 /* Assets.xcassets */; };
 		8CA6850C27413E0000405DE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA6850B27413E0000405DE9 /* Preview Assets.xcassets */; };
 		8CA6851327414BA400405DE9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6851227414BA400405DE9 /* LoginView.swift */; };
+		8CAEA98927429801005AC5EE /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA98827429801005AC5EE /* BookingView.swift */; };
 		8CAFF1D827417C8400969B52 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1D727417C8400969B52 /* ForgotPasswordView.swift */; };
 		8CAFF1DB27417CAA00969B52 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1DA27417CAA00969B52 /* SignUpView.swift */; };
 		8CAFF1DF2742140700969B52 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1DE2742140700969B52 /* ColorConstants.swift */; };
@@ -32,6 +33,7 @@
 		8CA6850827413E0000405DE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CA6850B27413E0000405DE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8CA6851227414BA400405DE9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8CAEA98827429801005AC5EE /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		8CAFF1D727417C8400969B52 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		8CAFF1DA27417CAA00969B52 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8CAFF1DE2742140700969B52 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		8CAEA98A2742980A005AC5EE /* Bookings */ = {
+			isa = PBXGroup;
+			children = (
+				8CAEA98827429801005AC5EE /* BookingView.swift */,
+			);
+			path = Bookings;
+			sourceTree = "<group>";
+		};
 		8CAFF1D62741789100969B52 /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 				8CAFF1E02742240600969B52 /* Shared */,
 				8CAFF1ED27422A9D00969B52 /* Profile */,
 				8CAFF1EA274229BE00969B52 /* Home */,
+				8CAEA98A2742980A005AC5EE /* Bookings */,
 				8CAFF1E82742295500969B52 /* BottomTabBar.swift */,
 				8CA6851427414C3800405DE9 /* Auth */,
 			);
@@ -255,6 +266,7 @@
 				8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */,
 				8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */,
 				8CAFF1DF2742140700969B52 /* ColorConstants.swift in Sources */,
+				8CAEA98927429801005AC5EE /* BookingView.swift in Sources */,
 				8CAFF1F92742956C00969B52 /* SlotComponentVertical.swift in Sources */,
 				8CAFF1E32742244500969B52 /* CustomHeader.swift in Sources */,
 				8CAFF1D827417C8400969B52 /* ForgotPasswordView.swift in Sources */,
