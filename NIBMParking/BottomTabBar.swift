@@ -15,29 +15,47 @@ struct BottomTabBar: View {
                 
                 HomeView()
                     .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("First Tab")
+                        Image("home-7")
+                        Text("Slots")
+                            .foregroundColor(colorBackground)
                         
                     }
                 
-                BookingView()
-                    .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Second Tab")
-                        
-                    }
+                if LocalUser.shared.checkLocalUser(){
+                    
+                    BookingView()
+                        .tabItem {
+                            Image(systemName: "phone.fill")
+                            Text("Bookings")
+                            
+                        }
+                    
+                    ProfileView()
+                        .tabItem {
+                            Image(systemName: "phone.fill")
+                            Text("Profile")
+                            
+                        }
+                }else{
+                    
+                    AboutUs()
+                        .tabItem {
+                            Image(systemName: "phone.fill")
+                            Text("Login")
+                            
+                        }
+                }
                 
-                ProfileView()
-                    .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("First Tab")
-                        
-                    }
             }
-        
+            .navigationBarHidden(true)
+
+
         }
+        
+        
     }
 }
+
 
 struct BottomTabBar_Previews: PreviewProvider {
     static var previews: some View {

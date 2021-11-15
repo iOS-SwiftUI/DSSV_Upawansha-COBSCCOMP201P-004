@@ -55,6 +55,7 @@ struct ForgotPasswordView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
+
         
     }
 }

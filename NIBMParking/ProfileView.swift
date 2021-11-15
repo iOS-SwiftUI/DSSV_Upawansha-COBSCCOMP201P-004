@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @StateObject var vm = ProfileVM()
+    
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var nic: String = ""
@@ -16,7 +18,8 @@ struct ProfileView: View {
     @State private var regNo: String = ""
     @State private var vehicleNo: String = ""
     
-    
+    @State var isLogoutSuccess = false
+  
     
     var body: some View {
         
@@ -38,22 +41,34 @@ struct ProfileView: View {
                             CustomLabelAndNotEditableTextField(labelTxt:"Contact Number", valueText: $contactNumber)
                             CustomLabelAndNotEditableTextField(labelTxt:"Register Number", valueText: $regNo)
                             CustomLabelAndNotEditableTextField(labelTxt:"Vehicle Number", valueText: $vehicleNo)
-                         
-                            Spacer()
                             
-                            Button(action: {}){
-                                Text("Log Out")
-                                    .foregroundColor(Color.white)
-                                    .padding()
-                                    .frame(width: 220, height: 48)
-                                    .background(colorBackground)
-                                    .cornerRadius(24)
+                            
+                            NavigationLink(destination:
+                                            LoginView()
+                                           , isActive: $isLogoutSuccess){
+                                
+                                Button(action: {
+                                    
+                                    vm.logOutCurrentUser { success in
+                                        if success{
+                                            isLogoutSuccess = true
+                                        }
+                                    }
+                                }){
+                                    
+                                    Text("Log Out")
+                                        .foregroundColor(Color.white)
+                                        .padding()
+                                        .frame(width: 220, height: 48)
+                                        .background(colorBackground)
+                                        .cornerRadius(24)
+                                }
                             }
-                            .padding(.bottom,40)
+                            Spacer()
                         }
                         .frame(minHeight: geometry.size.height)
                         .padding(.all,20)
-
+                        
                         
                     }
                     .frame(width: geometry.size.width)
@@ -62,6 +77,7 @@ struct ProfileView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
+
         
     }
 }

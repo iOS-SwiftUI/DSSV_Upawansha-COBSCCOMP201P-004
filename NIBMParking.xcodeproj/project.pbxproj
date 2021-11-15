@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CA04E316626007A2FB545FF /* Pods_NIBMParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */; };
 		8CA6850527413DFF00405DE9 /* NIBMParkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */; };
 		8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850627413DFF00405DE9 /* ContentView.swift */; };
 		8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA6850827413E0000405DE9 /* Assets.xcassets */; };
@@ -14,6 +15,21 @@
 		8CA6851327414BA400405DE9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6851227414BA400405DE9 /* LoginView.swift */; };
 		8CAEA98927429801005AC5EE /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA98827429801005AC5EE /* BookingView.swift */; };
 		8CAEA98C27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA98B27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift */; };
+		8CAEA98F2742AF7D005AC5EE /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA98E2742AF7D005AC5EE /* CodeScanner */; };
+		8CAEA9912742B14B005AC5EE /* BookingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA9902742B14B005AC5EE /* BookingVM.swift */; };
+		8CAEA9932742B2EA005AC5EE /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA9922742B2EA005AC5EE /* LoginVM.swift */; };
+		8CAEA9962742B5F4005AC5EE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA9952742B5F4005AC5EE /* FirebaseAnalytics */; };
+		8CAEA9982742B5F4005AC5EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA9972742B5F4005AC5EE /* FirebaseAuth */; };
+		8CAEA99A2742B5F4005AC5EE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA9992742B5F4005AC5EE /* FirebaseCrashlytics */; };
+		8CAEA99C2742B5F4005AC5EE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA99B2742B5F4005AC5EE /* FirebaseDatabase */; };
+		8CAEA99E2742B5F4005AC5EE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA99D2742B5F4005AC5EE /* FirebaseFirestore */; };
+		8CAEA9A02742B5F4005AC5EE /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA99F2742B5F4005AC5EE /* FirebaseMessaging */; };
+		8CAEA9A22742B5F4005AC5EE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8CAEA9A12742B5F4005AC5EE /* FirebaseStorage */; };
+		8CAEA9A52742B704005AC5EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CAEA9A42742B704005AC5EE /* GoogleService-Info.plist */; };
+		8CAEA9A72742B775005AC5EE /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA9A62742B775005AC5EE /* CustomAlert.swift */; };
+		8CAEA9A92742BFBE005AC5EE /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA9A82742BFBE005AC5EE /* LocalUser.swift */; };
+		8CAEA9AB2742C420005AC5EE /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA9AA2742C420005AC5EE /* AboutUs.swift */; };
+		8CAEA9AD2742CA3A005AC5EE /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEA9AC2742CA3A005AC5EE /* ProfileVM.swift */; };
 		8CAFF1D827417C8400969B52 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1D727417C8400969B52 /* ForgotPasswordView.swift */; };
 		8CAFF1DB27417CAA00969B52 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1DA27417CAA00969B52 /* SignUpView.swift */; };
 		8CAFF1DF2742140700969B52 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1DE2742140700969B52 /* ColorConstants.swift */; };
@@ -28,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E39CEA54A66428F44CD2DB5 /* Pods-NIBMParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBMParking.debug.xcconfig"; path = "Target Support Files/Pods-NIBMParking/Pods-NIBMParking.debug.xcconfig"; sourceTree = "<group>"; };
 		8CA6850127413DFF00405DE9 /* NIBMParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBMParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBMParkingApp.swift; sourceTree = "<group>"; };
 		8CA6850627413DFF00405DE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +53,13 @@
 		8CA6851227414BA400405DE9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8CAEA98827429801005AC5EE /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		8CAEA98B27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelAndNotEditableTextField.swift; sourceTree = "<group>"; };
+		8CAEA9902742B14B005AC5EE /* BookingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVM.swift; sourceTree = "<group>"; };
+		8CAEA9922742B2EA005AC5EE /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		8CAEA9A42742B704005AC5EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8CAEA9A62742B775005AC5EE /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		8CAEA9A82742BFBE005AC5EE /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
+		8CAEA9AA2742C420005AC5EE /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
+		8CAEA9AC2742CA3A005AC5EE /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		8CAFF1D727417C8400969B52 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		8CAFF1DA27417CAA00969B52 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8CAFF1DE2742140700969B52 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -47,6 +71,8 @@
 		8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
 		8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotComponentHorizontal.swift; sourceTree = "<group>"; };
 		8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotComponentVertical.swift; sourceTree = "<group>"; };
+		937DB4894FB24AE5BE9B041F /* Pods-NIBMParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBMParking.release.xcconfig"; path = "Target Support Files/Pods-NIBMParking/Pods-NIBMParking.release.xcconfig"; sourceTree = "<group>"; };
+		DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBMParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,17 +80,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAEA9A02742B5F4005AC5EE /* FirebaseMessaging in Frameworks */,
+				8CAEA99C2742B5F4005AC5EE /* FirebaseDatabase in Frameworks */,
+				8CAEA9A22742B5F4005AC5EE /* FirebaseStorage in Frameworks */,
+				8CAEA98F2742AF7D005AC5EE /* CodeScanner in Frameworks */,
+				6CA04E316626007A2FB545FF /* Pods_NIBMParking.framework in Frameworks */,
+				8CAEA99A2742B5F4005AC5EE /* FirebaseCrashlytics in Frameworks */,
+				8CAEA9962742B5F4005AC5EE /* FirebaseAnalytics in Frameworks */,
+				8CAEA9982742B5F4005AC5EE /* FirebaseAuth in Frameworks */,
+				8CAEA99E2742B5F4005AC5EE /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41B9E803E56C97BC13D1F081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8CA684F827413DFF00405DE9 = {
 			isa = PBXGroup;
 			children = (
 				8CA6850327413DFF00405DE9 /* NIBMParking */,
 				8CA6850227413DFF00405DE9 /* Products */,
+				E3355210C60E977FE96AF7F3 /* Pods */,
+				41B9E803E56C97BC13D1F081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,8 +126,6 @@
 			children = (
 				8CAFF1E5274228FB00969B52 /* View+ViewModel  */,
 				8CAFF1DD274213F100969B52 /* Util */,
-				8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */,
-				8CA6850627413DFF00405DE9 /* ContentView.swift */,
 				8CA6850827413E0000405DE9 /* Assets.xcassets */,
 				8CA6850A27413E0000405DE9 /* Preview Content */,
 			);
@@ -111,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				8CA6851227414BA400405DE9 /* LoginView.swift */,
+				8CAEA9922742B2EA005AC5EE /* LoginVM.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -119,8 +163,19 @@
 			isa = PBXGroup;
 			children = (
 				8CAEA98827429801005AC5EE /* BookingView.swift */,
+				8CAEA9902742B14B005AC5EE /* BookingVM.swift */,
 			);
 			path = Bookings;
+			sourceTree = "<group>";
+		};
+		8CAEA9A32742B60E005AC5EE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8CAEA9A42742B704005AC5EE /* GoogleService-Info.plist */,
+				8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */,
+				8CA6850627413DFF00405DE9 /* ContentView.swift */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 		8CAFF1D62741789100969B52 /* Sign Up */ = {
@@ -156,6 +211,7 @@
 				8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */,
 				8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */,
 				8CAEA98B27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift */,
+				8CAEA9A62742B775005AC5EE /* CustomAlert.swift */,
 			);
 			name = Shared;
 			path = Auth;
@@ -164,12 +220,15 @@
 		8CAFF1E5274228FB00969B52 /* View+ViewModel  */ = {
 			isa = PBXGroup;
 			children = (
+				8CAEA9A32742B60E005AC5EE /* App */,
 				8CAFF1E02742240600969B52 /* Shared */,
 				8CA6851427414C3800405DE9 /* Auth */,
 				8CAFF1EA274229BE00969B52 /* Home */,
 				8CAEA98A2742980A005AC5EE /* Bookings */,
 				8CAFF1ED27422A9D00969B52 /* Profile */,
 				8CAFF1E82742295500969B52 /* BottomTabBar.swift */,
+				8CAEA9A82742BFBE005AC5EE /* LocalUser.swift */,
+				8CAEA9AA2742C420005AC5EE /* AboutUs.swift */,
 			);
 			name = "View+ViewModel ";
 			sourceTree = "<group>";
@@ -186,8 +245,18 @@
 			isa = PBXGroup;
 			children = (
 				8CAFF1EE27422AAC00969B52 /* ProfileView.swift */,
+				8CAEA9AC2742CA3A005AC5EE /* ProfileVM.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		E3355210C60E977FE96AF7F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E39CEA54A66428F44CD2DB5 /* Pods-NIBMParking.debug.xcconfig */,
+				937DB4894FB24AE5BE9B041F /* Pods-NIBMParking.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +266,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CA6850F27413E0000405DE9 /* Build configuration list for PBXNativeTarget "NIBMParking" */;
 			buildPhases = (
+				F40C0B189DB1C7EE8E82391C /* [CP] Check Pods Manifest.lock */,
 				8CA684FD27413DFF00405DE9 /* Sources */,
 				8CA684FE27413DFF00405DE9 /* Frameworks */,
 				8CA684FF27413DFF00405DE9 /* Resources */,
@@ -206,6 +276,16 @@
 			dependencies = (
 			);
 			name = NIBMParking;
+			packageProductDependencies = (
+				8CAEA98E2742AF7D005AC5EE /* CodeScanner */,
+				8CAEA9952742B5F4005AC5EE /* FirebaseAnalytics */,
+				8CAEA9972742B5F4005AC5EE /* FirebaseAuth */,
+				8CAEA9992742B5F4005AC5EE /* FirebaseCrashlytics */,
+				8CAEA99B2742B5F4005AC5EE /* FirebaseDatabase */,
+				8CAEA99D2742B5F4005AC5EE /* FirebaseFirestore */,
+				8CAEA99F2742B5F4005AC5EE /* FirebaseMessaging */,
+				8CAEA9A12742B5F4005AC5EE /* FirebaseStorage */,
+			);
 			productName = NIBMParking;
 			productReference = 8CA6850127413DFF00405DE9 /* NIBMParking.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +314,10 @@
 				Base,
 			);
 			mainGroup = 8CA684F827413DFF00405DE9;
+			packageReferences = (
+				8CAEA98D2742AF7D005AC5EE /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8CA6850227413DFF00405DE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,10 +334,36 @@
 			files = (
 				8CA6850C27413E0000405DE9 /* Preview Assets.xcassets in Resources */,
 				8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */,
+				8CAEA9A52742B704005AC5EE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F40C0B189DB1C7EE8E82391C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NIBMParking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CA684FD27413DFF00405DE9 /* Sources */ = {
@@ -266,6 +376,10 @@
 				8CA6851327414BA400405DE9 /* LoginView.swift in Sources */,
 				8CAFF1EF27422AAC00969B52 /* ProfileView.swift in Sources */,
 				8CAFF1DB27417CAA00969B52 /* SignUpView.swift in Sources */,
+				8CAEA9AD2742CA3A005AC5EE /* ProfileVM.swift in Sources */,
+				8CAEA9AB2742C420005AC5EE /* AboutUs.swift in Sources */,
+				8CAEA9A72742B775005AC5EE /* CustomAlert.swift in Sources */,
+				8CAEA9912742B14B005AC5EE /* BookingVM.swift in Sources */,
 				8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */,
 				8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */,
 				8CAEA98C27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift in Sources */,
@@ -273,6 +387,8 @@
 				8CAEA98927429801005AC5EE /* BookingView.swift in Sources */,
 				8CAFF1F92742956C00969B52 /* SlotComponentVertical.swift in Sources */,
 				8CAFF1E32742244500969B52 /* CustomHeader.swift in Sources */,
+				8CAEA9932742B2EA005AC5EE /* LoginVM.swift in Sources */,
+				8CAEA9A92742BFBE005AC5EE /* LocalUser.swift in Sources */,
 				8CAFF1D827417C8400969B52 /* ForgotPasswordView.swift in Sources */,
 				8CAFF1E92742295500969B52 /* BottomTabBar.swift in Sources */,
 				8CA6850527413DFF00405DE9 /* NIBMParkingApp.swift in Sources */,
@@ -400,6 +516,7 @@
 		};
 		8CA6851027413E0000405DE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E39CEA54A66428F44CD2DB5 /* Pods-NIBMParking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -429,6 +546,7 @@
 		};
 		8CA6851127413E0000405DE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 937DB4894FB24AE5BE9B041F /* Pods-NIBMParking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -478,6 +596,68 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CAEA98D2742AF7D005AC5EE /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CAEA98E2742AF7D005AC5EE /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA98D2742AF7D005AC5EE /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		8CAEA9952742B5F4005AC5EE /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		8CAEA9972742B5F4005AC5EE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8CAEA9992742B5F4005AC5EE /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		8CAEA99B2742B5F4005AC5EE /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8CAEA99D2742B5F4005AC5EE /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8CAEA99F2742B5F4005AC5EE /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		8CAEA9A12742B5F4005AC5EE /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CA684F927413DFF00405DE9 /* Project object */;
 }

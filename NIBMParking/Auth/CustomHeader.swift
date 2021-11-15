@@ -25,7 +25,7 @@ struct CustomHeader: View {
             Spacer()
             
             Text(headerTitle ?? "")
-                .foregroundColor(Color.red)
+                .foregroundColor(Color.black)
             Spacer()
             
             ZStack {
