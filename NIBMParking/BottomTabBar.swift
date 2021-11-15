@@ -12,6 +12,7 @@ struct BottomTabBar: View {
         
         NavigationView{
             TabView{
+                
                 HomeView()
                     .tabItem {
                         Image(systemName: "phone.fill")
@@ -19,13 +20,14 @@ struct BottomTabBar: View {
                         
                     }
                 
-                ProfileView()
+                BookingView()
                     .tabItem {
                         Image(systemName: "phone.fill")
                         Text("Second Tab")
                         
                     }
-                HomeView()
+                
+                ProfileView()
                     .tabItem {
                         Image(systemName: "phone.fill")
                         Text("First Tab")
