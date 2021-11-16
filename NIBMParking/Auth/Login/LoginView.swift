@@ -84,7 +84,9 @@ struct LoginView: View {
                                         .frame(width: 220, height: 48)
                                         .background(colorBackground)
                                         .cornerRadius(24)
-                                }                                }
+                                }
+                                
+                            }
                             
                             
                             

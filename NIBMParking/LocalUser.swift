@@ -16,6 +16,8 @@ struct LocalUser {
     
     func checkLocalUser() -> Bool{
         if Auth.auth().currentUser != nil {
+            
+            print(Auth.auth().currentUser?.uid)
           // User is signed in.
             return true
         }

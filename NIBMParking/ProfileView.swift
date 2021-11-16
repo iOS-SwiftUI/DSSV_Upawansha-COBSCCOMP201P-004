@@ -11,12 +11,7 @@ struct ProfileView: View {
     
     @StateObject var vm = ProfileVM()
     
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var nic: String = ""
-    @State private var contactNumber: String = ""
-    @State private var regNo: String = ""
-    @State private var vehicleNo: String = ""
+  
     
     @State var isLogoutSuccess = false
   
@@ -35,12 +30,12 @@ struct ProfileView: View {
                             
                             Spacer()
                             
-                            CustomLabelAndNotEditableTextField(labelTxt:"Name", valueText: $name)
-                            CustomLabelAndNotEditableTextField(labelTxt:"Email", valueText: $email)
-                            CustomLabelAndNotEditableTextField(labelTxt:"NIC", valueText: $nic)
-                            CustomLabelAndNotEditableTextField(labelTxt:"Contact Number", valueText: $contactNumber)
-                            CustomLabelAndNotEditableTextField(labelTxt:"Register Number", valueText: $regNo)
-                            CustomLabelAndNotEditableTextField(labelTxt:"Vehicle Number", valueText: $vehicleNo)
+                            CustomLabelAndNotEditableTextField(labelTxt:"Name", valueText: $vm.name)
+                            CustomLabelAndNotEditableTextField(labelTxt:"Email", valueText: $vm.email)
+                            CustomLabelAndNotEditableTextField(labelTxt:"NIC", valueText: $vm.nic)
+                            CustomLabelAndNotEditableTextField(labelTxt:"Contact Number", valueText: $vm.contactNumber)
+                            CustomLabelAndNotEditableTextField(labelTxt:"Register Number", valueText: $vm.regNo)
+                            CustomLabelAndNotEditableTextField(labelTxt:"Vehicle Number", valueText: $vm.vehicleNo)
                             
                             
                             NavigationLink(destination:

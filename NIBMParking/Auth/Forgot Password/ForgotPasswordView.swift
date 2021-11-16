@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     
-    @State private var email:String = ""
+    @StateObject var vm = ForgotPasswordVM()
     
     var body: some View {
         
@@ -29,9 +29,17 @@ struct ForgotPasswordView: View {
                                 .resizable()
                                 .frame(width: 200, height: 100)
                             
-                            CustomTextField(placeHolder: "Enter email address . . .", valueText: $email)
+                            CustomTextField(placeHolder: "Enter email address . . .", valueText: $vm.email)
                             
-                            Button(action: {}){
+                            Button(action: {
+                                
+                                vm.resetPassword { status in
+                                    if status{
+                                        vm.email = ""
+                                    }
+                                }
+                                
+                            }){
                                 Text("Submit")
                                     .foregroundColor(Color.white)
                                     .padding()
@@ -51,7 +59,7 @@ struct ForgotPasswordView: View {
                 }
             }
             
-            
+            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)

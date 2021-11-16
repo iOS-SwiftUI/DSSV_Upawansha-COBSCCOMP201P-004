@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6CA04E316626007A2FB545FF /* Pods_NIBMParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */; };
+		8C0814BB274430E400E62CB3 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */; };
+		8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BC2744354D00E62CB3 /* SignUpVM.swift */; };
 		8CA6850527413DFF00405DE9 /* NIBMParkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */; };
 		8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850627413DFF00405DE9 /* ContentView.swift */; };
 		8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA6850827413E0000405DE9 /* Assets.xcassets */; };
@@ -45,7 +47,9 @@
 
 /* Begin PBXFileReference section */
 		4E39CEA54A66428F44CD2DB5 /* Pods-NIBMParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBMParking.debug.xcconfig"; path = "Target Support Files/Pods-NIBMParking/Pods-NIBMParking.debug.xcconfig"; sourceTree = "<group>"; };
-		8CA6850127413DFF00405DE9 /* NIBMParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBMParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
+		8C0814BC2744354D00E62CB3 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		8CA6850127413DFF00405DE9 /* NIBM Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM Parking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBMParkingApp.swift; sourceTree = "<group>"; };
 		8CA6850627413DFF00405DE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8CA6850827413E0000405DE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,7 +120,7 @@
 		8CA6850227413DFF00405DE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8CA6850127413DFF00405DE9 /* NIBMParking.app */,
+				8CA6850127413DFF00405DE9 /* NIBM Parking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				8CAFF1DA27417CAA00969B52 /* SignUpView.swift */,
+				8C0814BC2744354D00E62CB3 /* SignUpVM.swift */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				8CAFF1D727417C8400969B52 /* ForgotPasswordView.swift */,
+				8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */,
 			);
 			path = "Forgot Password";
 			sourceTree = "<group>";
@@ -287,7 +293,7 @@
 				8CAEA9A12742B5F4005AC5EE /* FirebaseStorage */,
 			);
 			productName = NIBMParking;
-			productReference = 8CA6850127413DFF00405DE9 /* NIBMParking.app */;
+			productReference = 8CA6850127413DFF00405DE9 /* NIBM Parking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -380,6 +386,8 @@
 				8CAEA9AB2742C420005AC5EE /* AboutUs.swift in Sources */,
 				8CAEA9A72742B775005AC5EE /* CustomAlert.swift in Sources */,
 				8CAEA9912742B14B005AC5EE /* BookingVM.swift in Sources */,
+				8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */,
+				8C0814BB274430E400E62CB3 /* ForgotPasswordVM.swift in Sources */,
 				8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */,
 				8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */,
 				8CAEA98C27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift in Sources */,
@@ -529,18 +537,20 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.em.iosTest.NIBMParking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NIBM Parking";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -559,18 +569,20 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.em.iosTest.NIBMParking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NIBM Parking";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
