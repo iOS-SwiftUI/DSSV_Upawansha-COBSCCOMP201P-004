@@ -2,14 +2,10 @@ import SwiftUI
 
 struct SignUp: View {
     
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var nic: String = ""
-    @State private var contactNumber: String = ""
-    @State private var regNo: String = ""
-    @State private var vehicleNo: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
+    
+    @StateObject var vm = SignUpVM()
+    @State var isSignUpSuccess = false
+
     
     
     var body: some View {
@@ -31,23 +27,41 @@ struct SignUp: View {
                                 .frame(width: 200, height: 100)
                             
                             
-                            CustomTextField(placeHolder: "Enter name . . .", valueText: $name)
-                            CustomTextField(placeHolder: "Enter email address . . .", valueText: $email)
-                            CustomTextField(placeHolder: "Enter NIC number . . .", valueText: $nic)
-                            CustomTextField(placeHolder: "Enter registration number . . .", valueText: $regNo)
-                            CustomTextField(placeHolder: "Enter vehicle number . . .", valueText: $vehicleNo)
-                            CustomSecureTextField(placeHolder: "Enter password . . .",password: $password)
-                            CustomSecureTextField(placeHolder: "Enter confirm password . . .",password: $confirmPassword)
+                            CustomTextField(placeHolder: "Enter name . . .", valueText: $vm.name)
+                            CustomTextField(placeHolder: "Enter email address . . .", valueText: $vm.email)
+                            CustomTextField(placeHolder: "Enter phone number . . .", valueText: $vm.contactNumber)
+                            CustomTextField(placeHolder: "Enter NIC number . . .", valueText: $vm.nic)
+                            CustomTextField(placeHolder: "Enter registration number . . .", valueText: $vm.regNo)
+                            CustomTextField(placeHolder: "Enter vehicle number . . .", valueText: $vm.vehicleNo)
+                            CustomSecureTextField(placeHolder: "Enter password . . .",password: $vm.password)
+                            CustomSecureTextField(placeHolder: "Enter confirm password . . .",password: $vm.confirmPassword)
                             
                             
-                            Button(action: {}){
-                                Text("Sign Up")
-                                    .foregroundColor(Color.white)
-                                    .padding()
-                                    .frame(width: 220, height: 48)
-                                    .background(colorBackground)
-                                    .cornerRadius(24)
+                            NavigationLink(destination:
+                                            BottomTabBar()
+                                           , isActive: $isSignUpSuccess){
+                                
+                                Button(action: {
+                                    
+                                    if vm.proceedWithLoginView(){
+                                        vm.registerUserNetworkRequest { success in
+                                            if success{
+                                                isSignUpSuccess = true
+                                            }
+                                        }
+                                    }
+                                    
+                                }){
+                                    Text("Sign Up")
+                                        .foregroundColor(Color.white)
+                                        .padding()
+                                        .frame(width: 220, height: 48)
+                                        .background(colorBackground)
+                                        .cornerRadius(24)
+                                }
+                                
                             }
+                            
                             
                         }
                         .frame(minHeight: geometry.size.height)
@@ -56,6 +70,7 @@ struct SignUp: View {
                     .frame(width: geometry.size.width)
                 }
             }
+            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
             .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
         }
