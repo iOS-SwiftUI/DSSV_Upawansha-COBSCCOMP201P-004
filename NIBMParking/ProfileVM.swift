@@ -58,7 +58,13 @@ class ProfileVM : ObservableObject{
                     guard let dict = snapshot.value as? [String: Any] else {
                         return
                     }
-                    
+                    self.name = dict["name"] as? String ??  ""
+                    self.email = dict["email"] as? String ??  ""
+                    self.nic = dict["nic"] as? String ??  ""
+                    self.contactNumber = dict["contactNo"] as? String ??  ""
+                    self.regNo = dict["registerNo"] as? String ??  ""
+                    self.vehicleNo = dict["vehicleNo"] as? String ??  ""
+
                     print(dict)
                     
                 }
