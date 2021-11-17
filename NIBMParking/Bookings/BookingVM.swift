@@ -29,7 +29,7 @@ class BookingVM :ObservableObject{
     //MARK: -VIEW MODEL
     @Published  var vehicleNo: String = ""
     @Published  var regNo: String = ""
-    @Published  var slotNoText:String? = "2"
+    @Published  var slotNoText:String?
     @Published var availabelVehicleNo:String?
     
     
@@ -46,11 +46,7 @@ class BookingVM :ObservableObject{
             
             print(details)
             print(result)
-            //            let person = Prospect()
-            //            person.name = details[0]
-            //            person.emailAddress = details[1]
-            //
-            //            self.prospects.people.append(person)
+       
         case .failure(let error):
             print("Scanning failed")
         }

@@ -69,8 +69,10 @@ struct BookingView: View {
                                 RappleActivityIndicatorView.startAnimating()
                                 if vm.slotNoText != nil{
                                     vm.getSlotData { status in
+                                        RappleActivityIndicatorView.stopAnimation()
                                         if status{
                                             if vm.availabelVehicleNo == nil{
+                                                RappleActivityIndicatorView.startAnimating()
                                                 vm.saveBoookingsInDataBase { success in
                                                     RappleActivityIndicatorView.stopAnimation()
                                                     if success{
