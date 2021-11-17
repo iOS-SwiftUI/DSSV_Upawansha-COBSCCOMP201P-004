@@ -12,19 +12,16 @@ struct Slot: Codable {
     var slotId: String?
     var name: String?
     var isVIP : String?
-    var isAvailable: String?
-    var bookedBy:String?
 
 
     
     
-    public init(slotId:String?,name: String?,isVIP : String?,isAvailable: String?,bookedBy: String?) {
+    public init(slotId:String?,name: String?,isVIP : String?) {
         
         self.slotId = slotId
         self.name = name
         self.isVIP = isVIP
-        self.isAvailable = isAvailable
-        self.bookedBy = bookedBy
+
 
 
         
@@ -34,8 +31,7 @@ struct Slot: Codable {
         case slotId = "slotId"
         case name = "name"
         case isVIP = "isVIP"
-        case isAvailable = "isAvailable"
-        case bookedBy = "bookedBy"
+
 
 
     }

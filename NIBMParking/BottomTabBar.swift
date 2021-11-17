@@ -15,7 +15,7 @@ struct BottomTabBar: View {
                 
                 HomeView()
                     .tabItem {
-                        Image("home-7")
+                        Image("3d")
                         Text("Slots")
                             .foregroundColor(colorBackground)
                         

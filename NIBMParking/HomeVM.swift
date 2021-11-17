@@ -19,6 +19,8 @@ class HomeVM:ObservableObject{
     @Published var normalSlotList = [Slot]()
     @Published var vipSlotList = [Slot]()
     
+    @Published var vehicleNo:String?
+    
     func fetchSlots(completion: @escaping (_ status: Bool) -> ()){
         
         let slotListRef: DatabaseReference! = Database.database().reference().child("slots")
@@ -35,11 +37,10 @@ class HomeVM:ObservableObject{
                     let slotId = slotObject?["slotId"]
                     let name  = slotObject?["name"]
                     let isVIP = slotObject?["isVIP"]
-                    let isAvailable  = slotObject?["isAvailable"]
                     let bookedBy  = slotObject?["bookedBy"]
    
                     
-                    let slot = Slot(slotId: slotId as! String?, name: name as! String?, isVIP: isVIP as! String?, isAvailable: isAvailable as! String?, bookedBy: bookedBy as! String?)
+                    let slot = Slot(slotId: slotId as! String?, name: name as! String?, isVIP: isVIP as! String?)
                     //appending it to list
                     
                     if slot.isVIP == "false"{
@@ -53,5 +54,35 @@ class HomeVM:ObservableObject{
                 completion(true)
             }
         }
+    }
+    
+    
+    
+    
+    func getSlotData(slotId:String,completion: @escaping (_ status: Bool) -> ()){
+        
+            
+            let dbRef = Database.database().reference().child("bookings").child(slotId)
+            
+            dbRef.observeSingleEvent(of: .value) { snapshot in
+                
+                if snapshot.exists(){
+                    
+                    guard let dict = snapshot.value as? [String: Any] else {
+                        completion(false)
+                        return
+                    }
+                    
+                    self.vehicleNo = dict["vehicleNo"] as? String ??  ""
+                    
+                    completion(true)
+
+                    print(dict)
+                    
+                }
+            }
+            
+        
+        
     }
 }

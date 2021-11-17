@@ -9,22 +9,10 @@ import SwiftUI
 import RappleProgressHUD
 
 
-public struct SectionView: View {
-    var section: Int
-    public var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(width: 275, height: 275, alignment: .center)
-            Text("\(section)")
-                .foregroundColor(.white)
-        }
-    }
-}
-
 struct HomeView: View {
     
     @State private var isShowingNumber: Int = 0
-
+    
     @StateObject var vm = HomeVM()
     
     var body: some View {
@@ -37,11 +25,11 @@ struct HomeView: View {
                     ScrollView(.vertical , showsIndicators: false) {
                         
                         VStack(alignment: .leading, spacing: 20) {
-                     
+                            
                             Text("VIP Slots")
                                 .foregroundColor(colorBackground)
                                 .font(.largeTitle)
-                           
+                            
                             
                             ScrollView(.horizontal,showsIndicators: false){
                                 HStack{
@@ -49,15 +37,21 @@ struct HomeView: View {
                                         SlotComponentVertical(imageString:"VIP",textString:slotItem.name)
                                             .onTapGesture {
                                                 
-                                                if slotItem.isAvailable == "false"{
-                                                    vm.isShowAlert = true
-                                                    vm.alertTitle = "Not Avilable"
-                                                    vm.alertMessage = "This slot already booked"
+                                                vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
+                                                    
+                                                    if status{
+                                                        vm.isShowAlert = true
+                                                        vm.alertTitle = "Not Available"
+                                                        vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
+                                                    }else{
+                                                        
+                                                    }
+                                                    
                                                 }
                                                 
                                             }
                                     }
-                               }
+                                }
                             }
                             
                             
@@ -85,8 +79,8 @@ struct HomeView: View {
             RappleActivityIndicatorView.startAnimating()
             vm.fetchSlots { status in
                 RappleActivityIndicatorView.stopAnimation()
-
-
+                
+                
                 if status{
                     print("success  !!!!")
                     print(vm.vipSlotList)
