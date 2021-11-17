@@ -23,6 +23,8 @@ struct SlotComponentVertical: View {
             
             Text(textString ?? "")
                 .font(.largeTitle)
+                .foregroundColor(colorBackground)
+
             
         }
         .frame( width:200, height: 200)

@@ -15,7 +15,8 @@ class BookingVM :ObservableObject{
     
     
     var ref: DatabaseReference! = Database.database().reference()
-
+    
+    
     //MARK: - PROPERTY FOR ALERT
     
     @Published var isShowAlert = false
@@ -28,8 +29,8 @@ class BookingVM :ObservableObject{
     //MARK: -VIEW MODEL
     @Published  var vehicleNo: String = ""
     @Published  var regNo: String = ""
-    @Published  var slotNoText:String? = "1"
-
+    @Published  var slotNoText:String? = "2"
+    @Published var availabelVehicleNo:String?
     
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
@@ -89,6 +90,7 @@ class BookingVM :ObservableObject{
                 if snapshot.exists(){
                     
                     guard let dict = snapshot.value as? [String: Any] else {
+                        completion(false)
                         return
                     }
                    
@@ -103,6 +105,36 @@ class BookingVM :ObservableObject{
             }
             
         }
+        
+    }
+    
+    
+    
+    func getSlotData(completion: @escaping (_ status: Bool) -> ()){
+        
+        let dbRef = Database.database().reference().child("bookings").child(slotNoText ?? "")
+            
+            dbRef.observeSingleEvent(of: .value) { snapshot in
+                
+                if snapshot.exists(){
+                    
+                    guard let dict = snapshot.value as? [String: Any] else {
+                        completion(false)
+                        return
+                    }
+                    
+                    self.availabelVehicleNo = dict["vehicleNo"] as? String ??  ""
+                    
+                    completion(true)
+
+                    print(dict)
+                    
+                }
+                
+                completion(true)
+            }
+            
+        
         
     }
     

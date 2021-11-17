@@ -24,6 +24,7 @@ struct SlotComponentHorizontal: View {
     
             Text(textString ?? "")
                 .font(.largeTitle)
+                .foregroundColor(colorBackground)
             
             Spacer()
         }

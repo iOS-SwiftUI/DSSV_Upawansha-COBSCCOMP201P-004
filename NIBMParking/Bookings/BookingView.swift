@@ -66,20 +66,42 @@ struct BookingView: View {
                             
                             Button(action: {
                                 
+                                RappleActivityIndicatorView.startAnimating()
                                 if vm.slotNoText != nil{
-                                    vm.saveBoookingsInDataBase { success in
-                                        if success{
-                                            vm.isShowAlert = true
-                                            vm.alertTitle = "Success"
-                                            vm.alertMessage = "Booked Added Succesfully !!"
+                                    vm.getSlotData { status in
+                                        if status{
+                                            if vm.availabelVehicleNo == nil{
+                                                vm.saveBoookingsInDataBase { success in
+                                                    RappleActivityIndicatorView.stopAnimation()
+                                                    if success{
+                                                        vm.isShowAlert = true
+                                                        vm.alertTitle = "Success"
+                                                        vm.alertMessage = "Booked Added Succesfully !!"
+                                                    }else{
+                                                        vm.isShowAlert = true
+                                                        vm.alertTitle = "Error"
+                                                        vm.alertMessage = "Booking failed !"
+                                                    }
+                                                }
+                                                
+                                            }else{
+                                                vm.isShowAlert = true
+                                                vm.alertTitle = "Available"
+                                                vm.alertMessage = "Already booked \(vm.availabelVehicleNo ?? "")"
+                                            }
+                                            
+                                        }else{
+                                            print("Error !!!")
                                         }
                                     }
                                 }else{
-                                    vm.isShowAlert = true
-                                    vm.alertTitle = "Success"
-                                    vm.alertMessage = "Booked Added Succesfully !!"
                                     
+                                    vm.isShowAlert = true
+                                    vm.alertTitle = "Error"
+                                    vm.alertMessage = "Slot No Required"
                                 }
+                                
+                                
                                 
                             }){
                                 Text("Book Slot")
@@ -97,6 +119,9 @@ struct BookingView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
+                CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
+
+                
             }.onAppear{
                 RappleActivityIndicatorView.startAnimating()
                 vm.getUserData { status in
@@ -104,9 +129,8 @@ struct BookingView: View {
                 }
             }
             
-            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
         }
-
+        
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
         

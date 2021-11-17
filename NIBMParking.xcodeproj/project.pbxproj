@@ -118,10 +118,27 @@
 		8C98AC3A2744BC0D00AD9D53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8CAEA9A82742BFBE005AC5EE /* LocalUser.swift */,
 				8C98AC362744BB0E00AD9D53 /* SlotModel.swift */,
 				8C98AC3B2745394B00AD9D53 /* Booking.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		8C98AC3D27456EAD00AD9D53 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				8CAEA9AA2742C420005AC5EE /* AboutUs.swift */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		8C98AC3E27456EC600AD9D53 /* MainTBC */ = {
+			isa = PBXGroup;
+			children = (
+				8CAFF1E82742295500969B52 /* BottomTabBar.swift */,
+			);
+			path = MainTBC;
 			sourceTree = "<group>";
 		};
 		8CA684F827413DFF00405DE9 = {
@@ -250,9 +267,8 @@
 				8CAFF1EA274229BE00969B52 /* Home */,
 				8CAEA98A2742980A005AC5EE /* Bookings */,
 				8CAFF1ED27422A9D00969B52 /* Profile */,
-				8CAFF1E82742295500969B52 /* BottomTabBar.swift */,
-				8CAEA9A82742BFBE005AC5EE /* LocalUser.swift */,
-				8CAEA9AA2742C420005AC5EE /* AboutUs.swift */,
+				8C98AC3D27456EAD00AD9D53 /* AboutUs */,
+				8C98AC3E27456EC600AD9D53 /* MainTBC */,
 			);
 			name = "View+ViewModel ";
 			sourceTree = "<group>";

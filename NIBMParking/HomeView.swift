@@ -27,36 +27,36 @@ struct HomeView: View {
                         VStack(alignment: .leading, spacing: 20) {
                             
                             Text("VIP Slots")
-                                .foregroundColor(colorBackground)
+                                .foregroundColor(Color.gray)
                                 .font(.largeTitle)
                             
                             
-                            ScrollView(.horizontal,showsIndicators: false){
-                                HStack{
-                                    ForEach (vm.vipSlotList,id:\.slotId){ slotItem in
-                                        SlotComponentVertical(imageString:"VIP",textString:slotItem.name)
-                                            .onTapGesture {
+                            
+                            VStack{
+                                ForEach (vm.vipSlotList,id:\.slotId){ slotItem in
+                                    SlotComponentHorizontal(imageString:"VIP",textString:slotItem.name)
+                                        .onTapGesture {
+                                            
+                                            vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
                                                 
-                                                vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
-                                                    
-                                                    if status{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Not Available"
-                                                        vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
-                                                    }else{
-                                                        
-                                                    }
+                                                if status{
+                                                    vm.isShowAlert = true
+                                                    vm.alertTitle = "Not Available"
+                                                    vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
+                                                }else{
                                                     
                                                 }
                                                 
                                             }
-                                    }
+                                            
+                                        }
                                 }
                             }
                             
                             
+                            
                             Text("Normal Slots")
-                                .foregroundColor(colorBackground)
+                                .foregroundColor(Color.gray)
                                 .font(.largeTitle)
                             
                             VStack{
@@ -65,20 +65,24 @@ struct HomeView: View {
                                 }
                                 
                             }
-                            Spacer()
+                           
                         }
                         .frame(minHeight: geometry.size.height)
                         .padding(.top,20)
+                        .padding(.leading,20)
                     }
                     .frame(width: geometry.size.width)
                 }
             }
             
             CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
-        }.onAppear{
+        }
+        .padding()
+        .onAppear{
             RappleActivityIndicatorView.startAnimating()
             vm.fetchSlots { status in
                 RappleActivityIndicatorView.stopAnimation()
+                    
                 
                 
                 if status{
