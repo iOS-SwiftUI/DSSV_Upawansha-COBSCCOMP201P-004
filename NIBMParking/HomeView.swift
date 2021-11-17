@@ -36,7 +36,7 @@ struct HomeView: View {
                     
                     ScrollView(.vertical , showsIndicators: false) {
                         
-                        VStack(alignment: .center, spacing: 20) {
+                        VStack(alignment: .leading, spacing: 20) {
                      
                             Text("VIP Slots")
                                 .foregroundColor(colorBackground)
@@ -46,9 +46,15 @@ struct HomeView: View {
                             ScrollView(.horizontal,showsIndicators: false){
                                 HStack{
                                     ForEach (vm.vipSlotList,id:\.slotId){ slotItem in
-                                        SlotComponentVertical(imageString:"placeholder-image",textString:"test")
+                                        SlotComponentVertical(imageString:"VIP",textString:slotItem.name)
                                             .onTapGesture {
-                                                print("tapped \(slotItem.slotId) ")
+                                                
+                                                if slotItem.isAvailable == "false"{
+                                                    vm.isShowAlert = true
+                                                    vm.alertTitle = "Not Avilable"
+                                                    vm.alertMessage = "This slot already booked"
+                                                }
+                                                
                                             }
                                     }
                                }
@@ -61,14 +67,14 @@ struct HomeView: View {
                             
                             VStack{
                                 ForEach (vm.normalSlotList,id:\.slotId){ slotItem in
-                                    SlotComponentHorizontal(imageString:"placeholder-image",textString:"test")
+                                    SlotComponentHorizontal(imageString:"Normal",textString:slotItem.name)
                                 }
                                 
                             }
-                            
+                            Spacer()
                         }
                         .frame(minHeight: geometry.size.height)
-                        .padding(.all,20)
+                        .padding(.top,20)
                     }
                     .frame(width: geometry.size.width)
                 }

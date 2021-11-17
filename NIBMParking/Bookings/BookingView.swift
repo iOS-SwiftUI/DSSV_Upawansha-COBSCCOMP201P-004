@@ -7,11 +7,11 @@
 
 import SwiftUI
 import CodeScanner
+import RappleProgressHUD
 
 
 struct BookingView: View {
     
-    var slotNoText:String?
     
     @StateObject var vm = BookingVM()
     
@@ -27,7 +27,6 @@ struct BookingView: View {
                         
                         VStack(alignment: .center, spacing: 20) {
                             
-                            
                             HStack(spacing:20){
                                 
                                 CustomLabelAndNotEditableTextField(labelTxt: "Vehicle No.", valueText: $vm.vehicleNo)
@@ -42,7 +41,7 @@ struct BookingView: View {
                                 Spacer()
                                 Text("Slot No.")
                                     .font(.largeTitle)
-                                Text(slotNoText ?? "1")
+                                Text(vm.slotNoText ?? "")
                                     .font(.largeTitle)
                                 Spacer()
                             }
@@ -60,13 +59,29 @@ struct BookingView: View {
                                     Text("Tap to scan the QR Code")
                                         .foregroundColor(colorBackground)
                                     
-                                    
                                 }
                             }
                             
                             
                             
-                            Button(action: {}){
+                            Button(action: {
+                                
+                                if vm.slotNoText != nil{
+                                    vm.saveBoookingsInDataBase { success in
+                                        if success{
+                                            vm.isShowAlert = true
+                                            vm.alertTitle = "Success"
+                                            vm.alertMessage = "Booked Added Succesfully !!"
+                                        }
+                                    }
+                                }else{
+                                    vm.isShowAlert = true
+                                    vm.alertTitle = "Success"
+                                    vm.alertMessage = "Booked Added Succesfully !!"
+                                    
+                                }
+                                
+                            }){
                                 Text("Book Slot")
                                     .foregroundColor(Color.white)
                                     .frame(width: 220, height: 48)
@@ -82,11 +97,19 @@ struct BookingView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
+            }.onAppear{
+                RappleActivityIndicatorView.startAnimating()
+                vm.getUserData { status in
+                    RappleActivityIndicatorView.stopAnimation()
+                }
             }
+            
+            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
         }
+
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
-
+        
         
         .sheet(isPresented: $vm.isShowingScanner) {
             CodeScannerView(codeTypes: [.qr], simulatedData: "Paul hudson\npaul@hackingwithswift.com", completion: vm.handleScan)
