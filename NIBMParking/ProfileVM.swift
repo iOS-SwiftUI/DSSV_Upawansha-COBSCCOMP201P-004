@@ -43,9 +43,6 @@ class ProfileVM : ObservableObject{
     
     func getUserData(completion: @escaping (_ status: Bool) -> ()){
         
-        
-        
-        
         if let user = Auth.auth().currentUser{
             
             let uid = user.uid
@@ -64,6 +61,8 @@ class ProfileVM : ObservableObject{
                     self.contactNumber = dict["contactNo"] as? String ??  ""
                     self.regNo = dict["registerNo"] as? String ??  ""
                     self.vehicleNo = dict["vehicleNo"] as? String ??  ""
+                    
+                    completion(true)
 
                     print(dict)
                     
@@ -73,6 +72,9 @@ class ProfileVM : ObservableObject{
         }
         
     }
+    
+    
+    
     
     
     

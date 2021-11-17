@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import RappleProgressHUD
 
 struct ProfileView: View {
     
     @StateObject var vm = ProfileVM()
     
-  
+    
     
     @State var isLogoutSuccess = false
-  
+    
     
     var body: some View {
         
@@ -68,11 +69,20 @@ struct ProfileView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
+            }     
+        }
+        .onAppear{
+            RappleActivityIndicatorView.startAnimating()
+            vm.getUserData { status in
+                RappleActivityIndicatorView.stopAnimation()
+                if status{
+                    print("success")
+                }
             }
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
-
+        
         
     }
 }

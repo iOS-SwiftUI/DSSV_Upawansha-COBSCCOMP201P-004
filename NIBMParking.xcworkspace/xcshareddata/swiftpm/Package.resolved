@@ -110,6 +110,15 @@
         }
       },
       {
+        "package": "RappleProgressHUD",
+        "repositoryURL": "https://github.com/rjeprasad/RappleProgressHUD",
+        "state": {
+          "branch": "master",
+          "revision": "1ef701c43feb0990e0d5e3521a4efa8a2ac40f7e",
+          "version": null
+        }
+      },
+      {
         "package": "SwiftProtobuf",
         "repositoryURL": "https://github.com/apple/swift-protobuf.git",
         "state": {

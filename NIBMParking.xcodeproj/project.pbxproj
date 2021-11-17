@@ -10,6 +10,7 @@
 		6CA04E316626007A2FB545FF /* Pods_NIBMParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */; };
 		8C0814BB274430E400E62CB3 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */; };
 		8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BC2744354D00E62CB3 /* SignUpVM.swift */; };
+		8C98AC352744B22600AD9D53 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8C98AC342744B22600AD9D53 /* RappleProgressHUD */; };
 		8CA6850527413DFF00405DE9 /* NIBMParkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */; };
 		8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850627413DFF00405DE9 /* ContentView.swift */; };
 		8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA6850827413E0000405DE9 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 				6CA04E316626007A2FB545FF /* Pods_NIBMParking.framework in Frameworks */,
 				8CAEA99A2742B5F4005AC5EE /* FirebaseCrashlytics in Frameworks */,
 				8CAEA9962742B5F4005AC5EE /* FirebaseAnalytics in Frameworks */,
+				8C98AC352744B22600AD9D53 /* RappleProgressHUD in Frameworks */,
 				8CAEA9982742B5F4005AC5EE /* FirebaseAuth in Frameworks */,
 				8CAEA99E2742B5F4005AC5EE /* FirebaseFirestore in Frameworks */,
 			);
@@ -291,6 +293,7 @@
 				8CAEA99D2742B5F4005AC5EE /* FirebaseFirestore */,
 				8CAEA99F2742B5F4005AC5EE /* FirebaseMessaging */,
 				8CAEA9A12742B5F4005AC5EE /* FirebaseStorage */,
+				8C98AC342744B22600AD9D53 /* RappleProgressHUD */,
 			);
 			productName = NIBMParking;
 			productReference = 8CA6850127413DFF00405DE9 /* NIBM Parking.app */;
@@ -323,6 +326,7 @@
 			packageReferences = (
 				8CAEA98D2742AF7D005AC5EE /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				8CAEA9942742B5F4005AC5EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8C98AC332744B22600AD9D53 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */,
 			);
 			productRefGroup = 8CA6850227413DFF00405DE9 /* Products */;
 			projectDirPath = "";
@@ -610,6 +614,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8C98AC332744B22600AD9D53 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rjeprasad/RappleProgressHUD";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		8CAEA98D2742AF7D005AC5EE /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -629,6 +641,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8C98AC342744B22600AD9D53 /* RappleProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C98AC332744B22600AD9D53 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */;
+			productName = RappleProgressHUD;
+		};
 		8CAEA98E2742AF7D005AC5EE /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8CAEA98D2742AF7D005AC5EE /* XCRemoteSwiftPackageReference "CodeScanner" */;
