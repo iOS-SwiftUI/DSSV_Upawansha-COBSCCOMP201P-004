@@ -11,6 +11,8 @@
 		8C0814BB274430E400E62CB3 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */; };
 		8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BC2744354D00E62CB3 /* SignUpVM.swift */; };
 		8C98AC352744B22600AD9D53 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8C98AC342744B22600AD9D53 /* RappleProgressHUD */; };
+		8C98AC372744BB0E00AD9D53 /* SlotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC362744BB0E00AD9D53 /* SlotModel.swift */; };
+		8C98AC392744BB3A00AD9D53 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC382744BB3A00AD9D53 /* HomeVM.swift */; };
 		8CA6850527413DFF00405DE9 /* NIBMParkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */; };
 		8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6850627413DFF00405DE9 /* ContentView.swift */; };
 		8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA6850827413E0000405DE9 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		4E39CEA54A66428F44CD2DB5 /* Pods-NIBMParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBMParking.debug.xcconfig"; path = "Target Support Files/Pods-NIBMParking/Pods-NIBMParking.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
 		8C0814BC2744354D00E62CB3 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		8C98AC362744BB0E00AD9D53 /* SlotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotModel.swift; sourceTree = "<group>"; };
+		8C98AC382744BB3A00AD9D53 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		8CA6850127413DFF00405DE9 /* NIBM Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM Parking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA6850427413DFF00405DE9 /* NIBMParkingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBMParkingApp.swift; sourceTree = "<group>"; };
 		8CA6850627413DFF00405DE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 				DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C98AC3A2744BC0D00AD9D53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C98AC362744BB0E00AD9D53 /* SlotModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		8CA684F827413DFF00405DE9 = {
@@ -244,7 +256,9 @@
 		8CAFF1EA274229BE00969B52 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8C98AC3A2744BC0D00AD9D53 /* Model */,
 				8CAFF1EB274229D800969B52 /* HomeView.swift */,
+				8C98AC382744BB3A00AD9D53 /* HomeVM.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -383,10 +397,12 @@
 				8CAFF1EC274229D800969B52 /* HomeView.swift in Sources */,
 				8CAFF1F32742353A00969B52 /* CustomSecureTextField.swift in Sources */,
 				8CAFF1F12742331F00969B52 /* CustomTextField.swift in Sources */,
+				8C98AC392744BB3A00AD9D53 /* HomeVM.swift in Sources */,
 				8CA6851327414BA400405DE9 /* LoginView.swift in Sources */,
 				8CAFF1EF27422AAC00969B52 /* ProfileView.swift in Sources */,
 				8CAFF1DB27417CAA00969B52 /* SignUpView.swift in Sources */,
 				8CAEA9AD2742CA3A005AC5EE /* ProfileVM.swift in Sources */,
+				8C98AC372744BB0E00AD9D53 /* SlotModel.swift in Sources */,
 				8CAEA9AB2742C420005AC5EE /* AboutUs.swift in Sources */,
 				8CAEA9A72742B775005AC5EE /* CustomAlert.swift in Sources */,
 				8CAEA9912742B14B005AC5EE /* BookingVM.swift in Sources */,
