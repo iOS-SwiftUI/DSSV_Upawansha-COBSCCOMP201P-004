@@ -25,7 +25,7 @@ class BookingVM :ObservableObject{
     @Published var alertMessage = ""
     @Published var alertTitle = ""
     @Published var isShowingScanner = false
-
+    
     
     //MARK: -VIEW MODEL
     @Published  var vehicleNo: String = ""
@@ -47,7 +47,7 @@ class BookingVM :ObservableObject{
             
             print(details)
             print(result)
-       
+            
         case .failure(let error):
             print("Scanning failed")
         }
@@ -57,21 +57,42 @@ class BookingVM :ObservableObject{
     
     
     func saveBoookingsInDataBase(currentLongitude: CLLocationDegrees,currentLatitude:CLLocationDegrees,completion: @escaping (_ status: Bool) -> ()){
-
+        
         ref.child("bookings").child(slotNoText ?? "").setValue(["slotID":slotNoText,"vehicleNo":vehicleNo ,"regNo":regNo ,"createdAt":getDate(),"latitude":"\(currentLatitude)","longitude":"\(currentLongitude)"])
         completion(true)
         
     }
     
     
+    func checkLocationServiceEnabled() -> Bool {
+        
+        if CLLocationManager.locationServicesEnabled(){
+            switch CLLocationManager.authorizationStatus(){
+                
+            case .notDetermined, .restricted,.denied :
+                print("No access")
+                return false
+            case .authorizedAlways,.authorizedWhenInUse:
+                print("Access")
+                return true
+
+            }
+        }else{
+            print("Location services are not enabled")
+            return false
+
+        }
+        
+    }
+    
     
     
     func getDate()->String{
-     let time = Date()
-     let timeFormatter = DateFormatter()
-     timeFormatter.dateFormat = "HH:ss"
-     let stringDate = timeFormatter.string(from: time)
-     return stringDate
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:ss"
+        let stringDate = timeFormatter.string(from: time)
+        return stringDate
     }
     
     
@@ -90,12 +111,12 @@ class BookingVM :ObservableObject{
                         completion(false)
                         return
                     }
-                   
+                    
                     self.regNo = dict["registerNo"] as? String ??  ""
                     self.vehicleNo = dict["vehicleNo"] as? String ??  ""
                     
                     completion(true)
-
+                    
                     print(dict)
                     
                 }
@@ -110,27 +131,27 @@ class BookingVM :ObservableObject{
     func getSlotData(completion: @escaping (_ status: Bool) -> ()){
         
         let dbRef = Database.database().reference().child("bookings").child(slotNoText ?? "")
+        
+        dbRef.observeSingleEvent(of: .value) { snapshot in
             
-            dbRef.observeSingleEvent(of: .value) { snapshot in
+            if snapshot.exists(){
                 
-                if snapshot.exists(){
-                    
-                    guard let dict = snapshot.value as? [String: Any] else {
-                        completion(false)
-                        return
-                    }
-                    
-                    self.availabelVehicleNo = dict["vehicleNo"] as? String ??  ""
-                    
-                    completion(true)
-
-                    print(dict)
-                    
+                guard let dict = snapshot.value as? [String: Any] else {
+                    completion(false)
+                    return
                 }
                 
+                self.availabelVehicleNo = dict["vehicleNo"] as? String ??  ""
+                
                 completion(true)
+                
+                print(dict)
+                
             }
             
+            completion(true)
+        }
+        
         
         
     }

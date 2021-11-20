@@ -56,10 +56,7 @@ class HomeVM:ObservableObject{
             }
         }
     }
-    
-    
-    
-    
+
     func getSlotData(slotId:String,completion: @escaping (_ status: Bool) -> ()){
         
             
@@ -80,10 +77,10 @@ class HomeVM:ObservableObject{
 
                     print(dict)
                     
+                }else{
+                    completion(false)
                 }
-                
-                completion(false)
-
+            
             }
             
         

@@ -16,17 +16,24 @@ struct BookingView: View {
     @ObservedObject private var locationManager = LocationManager()
     @StateObject var vm = BookingVM()
     @State  var slotNo:String?
-
+    @State var navigateFrom = false
+    
     
     
     var body: some View {
         
         let coordinate = self.locationManager.location != nil ? self.locationManager.location?.coordinate : CLLocationCoordinate2D()
-
+        
         
         ZStack {
             //colorBackground
             VStack {
+                
+                if navigateFrom == false{
+                    
+                }else{
+                    CustomHeader()
+                }
                 
                 GeometryReader { geometry in
                     
@@ -70,11 +77,18 @@ struct BookingView: View {
                             }
                             
                             
+                          
+                            
+                            
                             
                             Button(action: {
                                 
+                                let access = vm.checkLocationServiceEnabled()
+                                
+                                if access == true{
+                                
                                 RappleActivityIndicatorView.startAnimating()
-                                if vm.slotNoText != nil{
+                                if vm.slotNoText != ""{
                                     vm.getSlotData { status in
                                         RappleActivityIndicatorView.stopAnimation()
                                         if status{
@@ -93,7 +107,7 @@ struct BookingView: View {
                                                 
                                                 let coordinate0 = CLLocation(latitude: latitude, longitude: longitude)
                                                 let coordinate1 = CLLocation(latitude: 6.9027724, longitude: 79.8686713)
-                                              
+                                                
                                                 let distanceInMeters = coordinate0.distance(from: coordinate1)
                                                 let distanceInKilometers = distanceInMeters/1000
                                                 
@@ -118,7 +132,7 @@ struct BookingView: View {
                                                     vm.alertTitle = "Error"
                                                     vm.alertMessage = "You are far from the NIBM parking"
                                                 }
-              
+                                                
                                             }else{
                                                 vm.isShowAlert = true
                                                 vm.alertTitle = "Available"
@@ -134,6 +148,13 @@ struct BookingView: View {
                                     vm.isShowAlert = true
                                     vm.alertTitle = "Error"
                                     vm.alertMessage = "Slot No Required"
+                                }
+                                
+                                
+                                }else{
+                                    vm.isShowAlert = true
+                                    vm.alertTitle = "Location"
+                                    vm.alertMessage = "Please enable location services before add booking"
                                 }
                                 
                                 
@@ -154,7 +175,6 @@ struct BookingView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
-                CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
                 
                 
             }//Vstack
@@ -166,8 +186,11 @@ struct BookingView: View {
                     RappleActivityIndicatorView.stopAnimation()
                 }
                 
-                vm.slotNoText = slotNo ?? "8"
+                vm.slotNoText = slotNo ?? ""
             }
+            
+            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
+            
             
         }//ZStack
         

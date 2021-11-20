@@ -15,7 +15,7 @@ struct LoginView: View {
     @State var isForgotPasswordScreenIsActive = false
     @State var isRegisterScreenIsActive = false
     @State var isLoginSuccess = false
-    @State var isVerificationLinkActive = false
+    @State var isLoginViewIsActive = false
 
     @StateObject var vm = LoginVM()
     
@@ -113,13 +113,13 @@ struct LoginView: View {
             }//VStack
             CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage){
                 if vm.isBottomTabBarIsActive{
-                    isVerificationLinkActive.toggle()
+                    isLoginViewIsActive.toggle()
                 }
             }
             
             NavigationLink(destination:
                                      BottomTabBar()
-                                    , isActive: $isVerificationLinkActive){}
+                                    , isActive: $isLoginViewIsActive){}
             
         }//Zstack
         .edgesIgnoringSafeArea(.all)

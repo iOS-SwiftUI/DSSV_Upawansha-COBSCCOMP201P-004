@@ -4,7 +4,7 @@ struct SignUp: View {
     
     @StateObject var vm = SignUpVM()
     @State var isSignUpSuccess = false
-    @State var isVerificationLinkActive = false
+    @State var isSignUpViewIsActive = false
     
     
     @State var isBottomTabBarIsActive = false
@@ -73,13 +73,13 @@ struct SignUp: View {
             }//VStack
             CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage){
                 if vm.isBottomTabBarIsActive{
-                    isVerificationLinkActive.toggle()
+                    isSignUpViewIsActive.toggle()
                 }
             }
             
             NavigationLink(destination:
                                      BottomTabBar()
-                                    , isActive: $isVerificationLinkActive){}
+                                    , isActive: $isSignUpViewIsActive){}
             
             
         }//ZStack
