@@ -8,6 +8,7 @@
 import Foundation
 import CodeScanner
 import Firebase
+import MapKit
 
 
 
@@ -29,7 +30,7 @@ class BookingVM :ObservableObject{
     //MARK: -VIEW MODEL
     @Published  var vehicleNo: String = ""
     @Published  var regNo: String = ""
-    @Published  var slotNoText:String?
+    @Published  var slotNoText:String = "5"
     @Published var availabelVehicleNo:String?
     
     
@@ -55,9 +56,9 @@ class BookingVM :ObservableObject{
     }
     
     
-    func saveBoookingsInDataBase(completion: @escaping (_ status: Bool) -> ()){
+    func saveBoookingsInDataBase(currentLongitude: CLLocationDegrees,currentLatitude:CLLocationDegrees,completion: @escaping (_ status: Bool) -> ()){
 
-        ref.child("bookings").child(slotNoText ?? "").setValue(["slotID":slotNoText,"vehicleNo":vehicleNo ,"regNo":regNo ,"createdAt":getDate()])
+        ref.child("bookings").child(slotNoText ?? "").setValue(["slotID":slotNoText,"vehicleNo":vehicleNo ,"regNo":regNo ,"createdAt":getDate(),"latitude":"\(currentLatitude)","longitude":"\(currentLongitude)"])
         completion(true)
         
     }

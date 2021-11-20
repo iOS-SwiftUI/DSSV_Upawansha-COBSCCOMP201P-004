@@ -20,6 +20,9 @@ class LoginVM:ObservableObject{
     @Published  var email: String = ""
     @Published  var password: String = ""
     
+    @Published var  isBottomTabBarIsActive = false
+
+    
     
     //MARK: - VALIDATION
     func proceedWithLoginView() -> Bool {
@@ -57,6 +60,7 @@ class LoginVM:ObservableObject{
                 self.isShowAlert = true
                 self.alertTitle = "Success"
                 self.alertMessage = "Login Successfullly!!"
+                self.isBottomTabBarIsActive = true
                 completion(true)
                 //save local user
             }

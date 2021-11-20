@@ -8,14 +8,21 @@
 import SwiftUI
 import CodeScanner
 import RappleProgressHUD
+import MapKit
 
 
 struct BookingView: View {
     
-    
+    @ObservedObject private var locationManager = LocationManager()
     @StateObject var vm = BookingVM()
+    @State  var slotNo:String?
+
+    
     
     var body: some View {
+        
+        let coordinate = self.locationManager.location != nil ? self.locationManager.location?.coordinate : CLLocationCoordinate2D()
+
         
         ZStack {
             //colorBackground
@@ -73,19 +80,45 @@ struct BookingView: View {
                                         if status{
                                             if vm.availabelVehicleNo == nil{
                                                 RappleActivityIndicatorView.startAnimating()
-                                                vm.saveBoookingsInDataBase { success in
-                                                    RappleActivityIndicatorView.stopAnimation()
-                                                    if success{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Success"
-                                                        vm.alertMessage = "Booked Added Succesfully !!"
-                                                    }else{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Error"
-                                                        vm.alertMessage = "Booking failed !"
-                                                    }
+                                                
+                                                guard let longitude = coordinate?.longitude else{
+                                                    self.locationManager.location?.coordinate
+                                                    return
                                                 }
                                                 
+                                                guard let latitude = coordinate?.latitude else{
+                                                    self.locationManager.location?.coordinate
+                                                    return
+                                                }
+                                                
+                                                let coordinate0 = CLLocation(latitude: latitude, longitude: longitude)
+                                                let coordinate1 = CLLocation(latitude: 6.9027724, longitude: 79.8686713)
+                                              
+                                                let distanceInMeters = coordinate0.distance(from: coordinate1)
+                                                let distanceInKilometers = distanceInMeters/1000
+                                                
+                                                print(distanceInMeters)// result is in meters
+                                                
+                                                if distanceInKilometers < 1 {
+                                                    vm.saveBoookingsInDataBase(currentLongitude: longitude,currentLatitude:latitude) { success in
+                                                        RappleActivityIndicatorView.stopAnimation()
+                                                        if success{
+                                                            vm.isShowAlert = true
+                                                            vm.alertTitle = "Success"
+                                                            vm.alertMessage = "Booked Added Succesfully !!"
+                                                        }else{
+                                                            vm.isShowAlert = true
+                                                            vm.alertTitle = "Error"
+                                                            vm.alertMessage = "Booking failed !"
+                                                        }
+                                                    }
+                                                }else{
+                                                    RappleActivityIndicatorView.stopAnimation()
+                                                    vm.isShowAlert = true
+                                                    vm.alertTitle = "Error"
+                                                    vm.alertMessage = "You are far from the NIBM parking"
+                                                }
+              
                                             }else{
                                                 vm.isShowAlert = true
                                                 vm.alertTitle = "Available"
@@ -122,19 +155,24 @@ struct BookingView: View {
                     .frame(width: geometry.size.width)
                 }
                 CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
-
                 
-            }.onAppear{
+                
+            }//Vstack
+            .navigationBarHidden(true)
+            .navigationTitle("")
+            .onAppear{
                 RappleActivityIndicatorView.startAnimating()
                 vm.getUserData { status in
                     RappleActivityIndicatorView.stopAnimation()
                 }
+                
+                vm.slotNoText = slotNo ?? "8"
             }
             
-        }
+        }//ZStack
         
         .edgesIgnoringSafeArea(.all)
-        .navigationBarHidden(true)
+        
         
         
         .sheet(isPresented: $vm.isShowingScanner) {

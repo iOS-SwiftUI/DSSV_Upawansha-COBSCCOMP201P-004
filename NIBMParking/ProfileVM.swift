@@ -66,7 +66,11 @@ class ProfileVM : ObservableObject{
 
                     print(dict)
                     
+                }else{
+                    completion(false)
+
                 }
+                
             }
             
         }

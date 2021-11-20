@@ -9,11 +9,14 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     
     @State var isForgotPasswordScreenIsActive = false
     @State var isRegisterScreenIsActive = false
     @State var isLoginSuccess = false
-    
+    @State var isVerificationLinkActive = false
+
     @StateObject var vm = LoginVM()
     
     
@@ -24,8 +27,6 @@ struct LoginView: View {
         ZStack {
             //colorBackground
             VStack {
-                
-                //Header
                 CustomHeader()
                 GeometryReader { geometry in
                     
@@ -63,31 +64,26 @@ struct LoginView: View {
                                 }
                             }
                             
-                            NavigationLink(destination:
-                                            BottomTabBar()
-                                           , isActive: $isLoginSuccess){
+                            
+                            Button(action: {
                                 
-                                Button(action: {
-                                    
-                                    if vm.proceedWithLoginView(){
-                                        vm.login { success in
-                                            if success{
-                                                isLoginSuccess = true
-                                            }
+                                if vm.proceedWithLoginView(){
+                                    vm.login { success in
+                                        if success{
+                                            isLoginSuccess = true
+                                            Authenticated.send(true)
                                         }
                                     }
-                                    
-                                }){
-                                    Text("Login")
-                                        .foregroundColor(Color.white)
-                                        .padding()
-                                        .frame(width: 220, height: 48)
-                                        .background(colorBackground)
-                                        .cornerRadius(24)
                                 }
                                 
+                            }){
+                                Text("Login")
+                                    .foregroundColor(Color.white)
+                                    .padding()
+                                    .frame(width: 220, height: 48)
+                                    .background(colorBackground)
+                                    .cornerRadius(24)
                             }
-                            
                             
                             
                             Spacer()
@@ -99,6 +95,8 @@ struct LoginView: View {
                                 Button(action: {
                                     
                                     isRegisterScreenIsActive.toggle()
+                                    
+                                    
                                 }){
                                     Text("Don't you have an account? Register")
                                         .foregroundColor(colorBackground)
@@ -106,22 +104,29 @@ struct LoginView: View {
                                 }
                             }
                             
-                            
-                            
                         }
                         .frame(minHeight: geometry.size.height)
                         .padding(.all,20)
                     }
                     .frame(width: geometry.size.width)
                 }
+            }//VStack
+            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage){
+                if vm.isBottomTabBarIsActive{
+                    isVerificationLinkActive.toggle()
+                }
             }
-            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
             
-        } .edgesIgnoringSafeArea(.all)
-            .navigationBarHidden(true)
-        
+            NavigationLink(destination:
+                                     BottomTabBar()
+                                    , isActive: $isVerificationLinkActive){}
+            
+        }//Zstack
+        .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
+        .navigationTitle("")
         // }
-            .accentColor(colorBackground)
+        .accentColor(colorBackground)
         
         
     }

@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import MapKit
 import Firebase
 
 struct ContentView: View {
+    
         
     var body: some View {
-    
-        BottomTabBar()
+        
+     BottomTabBar()
+        
     }
 }
 

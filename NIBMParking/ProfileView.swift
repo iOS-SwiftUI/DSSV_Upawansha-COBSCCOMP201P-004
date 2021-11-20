@@ -39,15 +39,13 @@ struct ProfileView: View {
                             CustomLabelAndNotEditableTextField(labelTxt:"Vehicle Number", valueText: $vm.vehicleNo)
                             
                             
-                            NavigationLink(destination:
-                                            LoginView()
-                                           , isActive: $isLogoutSuccess){
-                                
+                      
                                 Button(action: {
                                     
                                     vm.logOutCurrentUser { success in
                                         if success{
                                             isLogoutSuccess = true
+                                            Authenticated.send(false)
                                         }
                                     }
                                 }){
@@ -59,7 +57,7 @@ struct ProfileView: View {
                                         .background(colorBackground)
                                         .cornerRadius(24)
                                 }
-                            }
+                            
                             Spacer()
                         }
                         .frame(minHeight: geometry.size.height)
@@ -69,8 +67,8 @@ struct ProfileView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
-            }     
-        }
+            }//VStack
+        }//Ztsack
         .onAppear{
             RappleActivityIndicatorView.startAnimating()
             vm.getUserData { status in

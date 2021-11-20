@@ -57,10 +57,10 @@ struct ForgotPasswordView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
-            }
+            }//VStack
             
             CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
-        }
+        }//ZStack
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
 

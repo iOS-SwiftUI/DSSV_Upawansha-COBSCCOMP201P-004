@@ -13,6 +13,8 @@ struct HomeView: View {
     
     @State private var isShowingNumber: Int = 0
     
+    @State var isBookindViewIsActive = false
+    
     @StateObject var vm = HomeVM()
     
     var body: some View {
@@ -31,41 +33,69 @@ struct HomeView: View {
                                 .font(.largeTitle)
                             
                             
-                            
-                            VStack{
-                                ForEach (vm.vipSlotList,id:\.slotId){ slotItem in
-                                    SlotComponentHorizontal(imageString:"VIP",textString:slotItem.name)
-                                        .onTapGesture {
-                                            
-                                            vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
-                                                
-                                                if status{
-                                                    vm.isShowAlert = true
-                                                    vm.alertTitle = "Not Available"
-                                                    vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
-                                                }else{
+                            NavigationLink(destination:
+                                            BookingView(slotNo: vm.slotId)
+                                           , isActive: $isBookindViewIsActive){
+                                
+                                VStack{
+                                    ForEach (vm.vipSlotList,id:\.slotId){ slotItem in
+                                        SlotComponentHorizontal(imageString:"VIP",textString:slotItem.name)
+                                            .onTapGesture {
+                                                vm.slotId = slotItem.slotId
+                                                vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
+                                                    
+                                                    if status{
+                                                        vm.isShowAlert = true
+                                                        vm.alertTitle = "Not Available"
+                                                        vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
+                                                    }else{
+                                                        
+                                                        isBookindViewIsActive.toggle()
+                                                        
+                                                    }
                                                     
                                                 }
                                                 
                                             }
-                                            
-                                        }
+                                    }
                                 }
                             }
-                            
                             
                             
                             Text("Normal Slots")
                                 .foregroundColor(Color.gray)
                                 .font(.largeTitle)
                             
-                            VStack{
-                                ForEach (vm.normalSlotList,id:\.slotId){ slotItem in
-                                    SlotComponentHorizontal(imageString:"Normal",textString:slotItem.name)
+                            NavigationLink(destination:
+                                            BookingView(slotNo: vm.slotId)
+                                           , isActive: $isBookindViewIsActive){
+                                
+                                VStack{
+                                    ForEach (vm.normalSlotList,id:\.slotId){ slotItem in
+                                        SlotComponentHorizontal(imageString:"Normal",textString:slotItem.name)
+                                            .onTapGesture {
+                                                vm.slotId = slotItem.slotId
+                                                
+                                                vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
+                                                    
+                                                    if status{
+                                                        vm.isShowAlert = true
+                                                        vm.alertTitle = "Not Available"
+                                                        vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
+                                                    }else{
+                                                        
+                                                        isBookindViewIsActive.toggle()
+                                                        
+                                                    }
+                                                    
+                                                }
+                                            }
+                                    }
+                                    
                                 }
                                 
                             }
-                           
+                            
                         }
                         .frame(minHeight: geometry.size.height)
                         .padding(.top,20)
@@ -73,16 +103,18 @@ struct HomeView: View {
                     }
                     .frame(width: geometry.size.width)
                 }
-            }
+            }//VStack
+            
+            .navigationBarHidden(true)
+            .navigationTitle("")
             
             CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
-        }
-        .padding()
+        }//Zstack
         .onAppear{
             RappleActivityIndicatorView.startAnimating()
             vm.fetchSlots { status in
                 RappleActivityIndicatorView.stopAnimation()
-                    
+                
                 
                 
                 if status{

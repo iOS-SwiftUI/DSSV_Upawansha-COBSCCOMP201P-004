@@ -65,7 +65,7 @@ struct AboutUs: View {
             }
             
             
-        }
+        }//ZStck
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
 

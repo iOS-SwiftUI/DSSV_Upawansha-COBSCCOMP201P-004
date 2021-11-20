@@ -26,6 +26,8 @@ class SignUpVM:ObservableObject{
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
     
+    @Published var  isBottomTabBarIsActive = false
+    
     var ref: DatabaseReference! = Database.database().reference()
     
     //MARK: - VALIDATION
@@ -66,7 +68,8 @@ class SignUpVM:ObservableObject{
                 self.alertTitle = "Success"
                 self.alertMessage = "Registered Successfullly!!"
                 self.saveUserInDataBase(id: response?.user.uid)
-
+                self.isBottomTabBarIsActive = true
+                completion(true)
             }
         }
     }

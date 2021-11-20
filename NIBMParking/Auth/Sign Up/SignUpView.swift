@@ -2,13 +2,16 @@ import SwiftUI
 
 struct SignUp: View {
     
-    
     @StateObject var vm = SignUpVM()
     @State var isSignUpSuccess = false
-
+    @State var isVerificationLinkActive = false
     
+    
+    @State var isBottomTabBarIsActive = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
+        
         
         ZStack {
             //colorBackground
@@ -26,7 +29,6 @@ struct SignUp: View {
                                 .resizable()
                                 .frame(width: 200, height: 100)
                             
-                            
                             CustomTextField(placeHolder: "Enter name . . .", valueText: $vm.name)
                             CustomTextField(placeHolder: "Enter email address . . .", valueText: $vm.email)
                             CustomTextField(placeHolder: "Enter phone number . . .", valueText: $vm.contactNumber)
@@ -36,10 +38,7 @@ struct SignUp: View {
                             CustomSecureTextField(placeHolder: "Enter password . . .",password: $vm.password)
                             CustomSecureTextField(placeHolder: "Enter confirm password . . .",password: $vm.confirmPassword)
                             
-                            
-                            NavigationLink(destination:
-                                            BottomTabBar()
-                                           , isActive: $isSignUpSuccess){
+        
                                 
                                 Button(action: {
                                     
@@ -47,6 +46,9 @@ struct SignUp: View {
                                         vm.registerUserNetworkRequest { success in
                                             if success{
                                                 isSignUpSuccess = true
+                                                Authenticated.send(true)
+                                                self.isBottomTabBarIsActive.toggle()
+                                                
                                             }
                                         }
                                     }
@@ -60,8 +62,7 @@ struct SignUp: View {
                                         .cornerRadius(24)
                                 }
                                 
-                            }
-                            
+                           // }
                             
                         }
                         .frame(minHeight: geometry.size.height)
@@ -69,12 +70,24 @@ struct SignUp: View {
                     }
                     .frame(width: geometry.size.width)
                 }
+            }//VStack
+            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage){
+                if vm.isBottomTabBarIsActive{
+                    isVerificationLinkActive.toggle()
+                }
             }
-            CustomAlert(isShowAlert: $vm.isShowAlert, alertTitle: vm.alertTitle, alertMessage:vm.alertMessage)
-            .edgesIgnoringSafeArea(.all)
-            .navigationBarHidden(true)
-        }
-        
+            
+            NavigationLink(destination:
+                                     BottomTabBar()
+                                    , isActive: $isVerificationLinkActive){}
+            
+            
+        }//ZStack
+        .navigationBarHidden(true)
+        .navigationTitle("")
+        .edgesIgnoringSafeArea(.all)
+
+
     }
 }
 

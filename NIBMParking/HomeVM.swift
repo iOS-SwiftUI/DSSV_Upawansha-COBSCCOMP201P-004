@@ -20,6 +20,7 @@ class HomeVM:ObservableObject{
     @Published var vipSlotList = [Slot]()
     
     @Published var vehicleNo:String?
+    @Published var slotId:String?
     
     func fetchSlots(completion: @escaping (_ status: Bool) -> ()){
         
@@ -80,6 +81,9 @@ class HomeVM:ObservableObject{
                     print(dict)
                     
                 }
+                
+                completion(false)
+
             }
             
         
