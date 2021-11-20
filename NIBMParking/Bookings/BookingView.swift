@@ -75,11 +75,7 @@ struct BookingView: View {
                                     
                                 }
                             }
-                            
-                            
-                          
-                            
-                            
+      
                             
                             Button(action: {
                                 

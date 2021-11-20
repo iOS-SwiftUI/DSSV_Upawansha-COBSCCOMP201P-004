@@ -16,6 +16,7 @@ struct LoginView: View {
     @State var isRegisterScreenIsActive = false
     @State var isLoginSuccess = false
     @State var isLoginViewIsActive = false
+    @State var isTermsScreenIsActive = false
 
     @StateObject var vm = LoginVM()
     
@@ -87,6 +88,22 @@ struct LoginView: View {
                             
                             
                             Spacer()
+                            
+                            NavigationLink(destination:
+                                            Terms()
+                                           , isActive: $isTermsScreenIsActive){
+                                
+                                Button(action: {
+                                    
+                                    isTermsScreenIsActive.toggle()
+                                    
+                                    
+                                }){
+                                    Text("Terms and Conditions")
+                                        .foregroundColor(colorBackground)
+                                        .padding(.bottom,40)
+                                }
+                            }
                             
                             NavigationLink(destination:
                                             SignUp()
