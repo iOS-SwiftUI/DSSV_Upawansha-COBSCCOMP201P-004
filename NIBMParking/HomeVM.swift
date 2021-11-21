@@ -56,6 +56,9 @@ class HomeVM:ObservableObject{
                 }
                 
                 completion(true)
+            }else{
+                completion(true)
+
             }
         }
     }

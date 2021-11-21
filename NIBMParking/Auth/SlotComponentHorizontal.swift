@@ -28,6 +28,7 @@ struct SlotComponentHorizontal: View {
             
             Spacer()
         }
+        .padding()
         .frame( height: 150
         )
     }

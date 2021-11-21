@@ -8,3 +8,4 @@
 import SwiftUI
 
 let colorBackground: Color = Color("ColorBackground")
+let cardColor: Color = Color("CardColor")

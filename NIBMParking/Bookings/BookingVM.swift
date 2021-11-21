@@ -129,6 +129,9 @@ class BookingVM :ObservableObject{
                     
                     print(dict)
                     
+                }else{
+                    completion(true)
+
                 }
             }
             
