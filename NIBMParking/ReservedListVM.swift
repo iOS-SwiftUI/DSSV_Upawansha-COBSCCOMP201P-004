@@ -23,6 +23,8 @@ class ReservedListVM:ObservableObject{
     @Published var availabelVehicleNo = ""
     @Published var statusBooked = ""
     @Published var statusReserved = ""
+    @Published var reference = Database.database().reference()
+
     
     
     func getSlotData(vehicleNoString:String,completion: @escaping (_ status: Bool) -> ()){
@@ -70,9 +72,19 @@ class ReservedListVM:ObservableObject{
     
     
     
-    func deleteRecordBookings(slotId:String){
+    func deleteRecordBookings(slotId:String,completion: @escaping (_ status: Bool) -> ()){
         
-       
+        let reference = self.reference.child("bookings").child(slotId)
+                 reference.removeValue { error, _ in
+                     
+                     if error != nil{
+                         print(error?.localizedDescription)
+                         completion(false)
+                     }else{
+                         completion(true)
+                     }
+                 }
+        
     }
 }
 

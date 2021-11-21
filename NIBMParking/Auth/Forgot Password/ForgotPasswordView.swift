@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ForgotPasswordView: View {
     
     @StateObject var vm = ForgotPasswordVM()
+    var ref: DatabaseReference! = Database.database().reference()
+
     
     var body: some View {
         
@@ -38,6 +41,11 @@ struct ForgotPasswordView: View {
                                         vm.email = ""
                                     }
                                 }
+                                
+//                                for i in 5...20 {
+//                                    ref.child("slots").child("\(i)").setValue(["slotId":"\(i)","name": "Slot No.\(i)","isVIP":"false"])
+//                                }
+
                                 
                             }){
                                 Text("Submit")

@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 import RappleProgressHUD
 
 struct ReservedListView: View {
     
     @StateObject var vm = ReservedListVM()
     @State  var vehicleNo: String = ""
+
     
     
     var body: some View {
@@ -78,7 +80,11 @@ struct ReservedListView: View {
                                             Button(action: {
                                                 
                                           
-                                                vm.deleteRecordBookings(slotId: slotItem.slotId ?? "")
+                                                vm.deleteRecordBookings(slotId: slotItem.slotId ?? "", completion: { success in
+                                                    if success{
+                                                        
+                                                    }
+                                                })
                                                 
                                             }){
                                                 Text("Cancel")
@@ -114,6 +120,11 @@ struct ReservedListView: View {
                                             
                                             Button(action: {
                                                 
+                                                vm.deleteRecordBookings(slotId: slotItem.slotId ?? "", completion: { success in
+                                                    if success{
+                                                        
+                                                    }
+                                                })
                                             }){
                                                 Text("Cancel")
                                                     .foregroundColor(Color.white)
@@ -155,7 +166,6 @@ struct ReservedListView: View {
             RappleActivityIndicatorView.startAnimating()
             vm.getSlotData(vehicleNoString: vehicleNo) { success in
                 RappleActivityIndicatorView.stopAnimation()
-                
                 print("")
             }
         }
