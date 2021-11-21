@@ -57,7 +57,9 @@ struct BottomTabBar: View {
                 
                 HomeView()
                     .tabItem {
-                        Label("Home", systemImage: "square.and.pencil")
+                        
+                        Image("home")
+                        Text("Home")
                     }
                 
                 
@@ -65,12 +67,14 @@ struct BottomTabBar: View {
                     
                     BookingView()
                         .tabItem {
-                            Label("Bookings", systemImage: "square.and.pencil")
+                            Image("parking")
+                            Text("Bookings")
                         }
                     
                     ProfileView()
                         .tabItem {
-                            Label("Profile", systemImage: "square.and.pencil")
+                            Image("settings")
+                            Text("Settings")
                         }
                     
                     
@@ -78,7 +82,8 @@ struct BottomTabBar: View {
                     
                     AboutUs()
                         .tabItem {
-                            Label("About Us", systemImage: "square.and.pencil")
+                            Image("description")
+                            Text("About Us")
                         }
                 }
                 
