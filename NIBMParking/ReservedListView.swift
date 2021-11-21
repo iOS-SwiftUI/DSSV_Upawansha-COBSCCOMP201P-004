@@ -69,6 +69,12 @@ struct ReservedListView: View {
                                             Spacer()
                                             Button(action: {
                                                 
+                                                vm.deleteRecordBookings(slotId: slotItem.slotId ?? "", completion: { success in
+                                                    if success{
+                                                        
+                                                    }
+                                                })
+                                                
                                             }){
                                                 Text("End")
                                                     .foregroundColor(Color.white)
@@ -107,7 +113,7 @@ struct ReservedListView: View {
                                         
                                             
                                             Button(action: {
-                                                
+                                                vm.updateStatus(slotId: slotItem.slotId ?? "")
                                             }){
                                                 Text("Book")
                                                     .foregroundColor(Color.white)

@@ -24,7 +24,7 @@ class ReservedListVM:ObservableObject{
     @Published var statusBooked = ""
     @Published var statusReserved = ""
     @Published var reference = Database.database().reference()
-
+    
     
     
     func getSlotData(vehicleNoString:String,completion: @escaping (_ status: Bool) -> ()){
@@ -40,7 +40,7 @@ class ReservedListVM:ObservableObject{
                 for bookings in snapshot.children.allObjects as! [DataSnapshot]{
                     
                     let bookingObject = bookings.value as? [String: AnyObject]
-
+                    
                     let slotId = bookingObject?["slotID"]
                     let regNo = bookingObject?["regNo"]
                     let vehicleNo = bookingObject?["vehicleNo"]
@@ -50,10 +50,10 @@ class ReservedListVM:ObservableObject{
                     let bookedTime = bookingObject?["bookedTime"]
                     let isReserved = bookingObject?["isReserved"]
                     let isBooked = bookingObject?["isBooked"]
-          
+                    
                     
                     let booking = Booking(slotId: slotId as? String, regNo: regNo as? String, reservedLocationLongitude: reservedLocationLongitude as? String, reservedLocationLatitude: reservedLocationLatitude as? String, reservedTime: reservedTime as? String, bookedTime: bookedTime as? String, vehicleNo: vehicleNo as? String, isBooked: isBooked as? String, isReserved: isReserved as? String)
-
+                    
                     //appending it to list
                     
                     self.bookingsAndReservedList.append(booking)
@@ -75,18 +75,37 @@ class ReservedListVM:ObservableObject{
     func deleteRecordBookings(slotId:String,completion: @escaping (_ status: Bool) -> ()){
         
         let reference = self.reference.child("bookings").child(slotId)
-                 reference.removeValue { error, _ in
-                     
-                     if error != nil{
-                         print(error?.localizedDescription)
-                         completion(false)
-                     }else{
-                         completion(true)
-                     }
-                 }
+        reference.removeValue { error, _ in
+            
+            if error != nil{
+                print(error?.localizedDescription)
+                completion(false)
+            }else{
+                completion(true)
+            }
+        }
         
     }
+    
+    
+    func updateStatus(slotId:String){
+        
+        let ref = Database.database().reference().child("bookings").child(slotId)
+        
+        ref.updateChildValues(["isBooked": "true","bookedTime":getDate()])
+        
+    }
+    
+    func getDate()->String{
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:ss"
+        let stringDate = timeFormatter.string(from: time)
+        return stringDate
+    }
 }
+
+
 
 
 
