@@ -15,6 +15,8 @@ struct ContentView: View {
     var body: some View {
         
              BottomTabBar()
+        
+//        BookingView()
     }
 }
 

@@ -56,9 +56,16 @@ class BookingVM :ObservableObject{
     }
     
     
-    func saveBoookingsInDataBase(currentLongitude: CLLocationDegrees,currentLatitude:CLLocationDegrees,completion: @escaping (_ status: Bool) -> ()){
+    func reserveAndAdBookings(currentLongitude: CLLocationDegrees,currentLatitude:CLLocationDegrees,completion: @escaping (_ status: Bool) -> ()){
         
-        ref.child("bookings").child(slotNoText ?? "").setValue(["slotID":slotNoText,"vehicleNo":vehicleNo ,"regNo":regNo ,"createdAt":getDate(),"latitude":"\(currentLatitude)","longitude":"\(currentLongitude)"])
+        ref.child("bookings").child(slotNoText ?? "").setValue(["slotID":slotNoText,"vehicleNo":vehicleNo ,"regNo":regNo ,"reservedTime":getDate(),"latitude":"\(currentLatitude)","longitude":"\(currentLongitude)","bookedTime":getDate(),"isReserved":"true","isBooked":"true"])
+        completion(true)
+        
+    }
+    
+    func onlyReserveSlot(currentLongitude: CLLocationDegrees,currentLatitude:CLLocationDegrees,completion: @escaping (_ status: Bool) -> ()){
+        
+        ref.child("bookings").child(slotNoText ?? "").setValue(["slotID":slotNoText,"vehicleNo":vehicleNo ,"regNo":regNo ,"reservedTime":getDate(),"latitude":"\(currentLatitude)","longitude":"\(currentLongitude)","bookedTime":"","isReserved":"true","isBooked":""])
         completion(true)
         
     }

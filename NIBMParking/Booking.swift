@@ -11,25 +11,39 @@ import Foundation
 struct Booking: Codable {
     
     var slotId: String?
-    var vehicleNo: String?
     var regNo : String?
-    var createdAt: String?
-
- 
-    public init(slotId:String?,vehicleNo: String?,regNo : String?,createdAt: String?) {
+    var vehicleNo:String?
+    var reservedLocationLongitude:String?
+    var reservedLocationLatitude:String?
+    var reservedTime: String?
+    var bookedTime:String?
+    var isReserved:String?
+    var isBooked:String?
+    
+    
+    public init(slotId:String?,regNo: String?,reservedLocationLongitude : String?,reservedLocationLatitude : String?,reservedTime: String?,bookedTime: String?,vehicleNo: String?,isBooked: String?) {
         
         self.slotId = slotId
-        self.vehicleNo = vehicleNo
         self.regNo = regNo
-        self.createdAt = createdAt
-
+        self.reservedLocationLongitude = reservedLocationLongitude
+        self.reservedLocationLatitude = reservedLocationLatitude
+        self.reservedTime = reservedTime
+        self.bookedTime = bookedTime
+        self.vehicleNo = vehicleNo
+        self.isBooked = isBooked
+        
     }
     
     public enum CodingKeys: String, CodingKey {
+        
         case slotId = "slotId"
-        case vehicleNo = "vehicleNo"
         case regNo = "regNo"
-        case createdAt = "createdAt"
+        case reservedLocationLongitude = "reservedLocationLongitude"
+        case reservedLocationLatitude = "reservedLocationLatitude"
+        case reservedTime = "reservedTime"
+        case bookedTime = "bookedTime"
+        case vehicleNo = "vehicleNo"
+        case isBooked = "isBooked"
         
     }
     

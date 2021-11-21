@@ -110,16 +110,16 @@ struct BookingView: View {
                                                 print(distanceInMeters)// result is in meters
                                                 
                                                 if distanceInKilometers < 1 {
-                                                    vm.saveBoookingsInDataBase(currentLongitude: longitude,currentLatitude:latitude) { success in
+                                                    vm.onlyReserveSlot(currentLongitude: longitude,currentLatitude:latitude) { success in
                                                         RappleActivityIndicatorView.stopAnimation()
                                                         if success{
                                                             vm.isShowAlert = true
                                                             vm.alertTitle = "Success"
-                                                            vm.alertMessage = "Booked Added Succesfully !!"
+                                                            vm.alertMessage = "Reserved Succesfully !!"
                                                         }else{
                                                             vm.isShowAlert = true
                                                             vm.alertTitle = "Error"
-                                                            vm.alertMessage = "Booking failed !"
+                                                            vm.alertMessage = "Reserved failed !"
                                                         }
                                                     }
                                                 }else{
@@ -156,8 +156,49 @@ struct BookingView: View {
                                 
                                 
                             }){
-                                Text("Book Slot")
+                                Text("Reserve Slot")
                                     .foregroundColor(Color.white)
+                                    .frame(width: 220, height: 48)
+                                    .background(colorBackground)
+                                    .cornerRadius(24)
+                            }
+                            
+                            
+                            Button(action: {
+                                
+                                guard let longitude = coordinate?.longitude else{
+                                    self.locationManager.location?.coordinate
+                                    return
+                                }
+                                
+                                guard let latitude = coordinate?.latitude else{
+                                    self.locationManager.location?.coordinate
+                                    return
+                                }
+                                
+                                vm.reserveAndAdBookings(currentLongitude: longitude, currentLatitude: latitude) { success in
+                                    
+                                    if success{
+                                        print("Reserved and added booking")
+
+                                    }
+                                }
+                               
+                            }){
+                                Text("Reserve and Book")
+                                    .foregroundColor(Color.white)
+                                    .padding()
+                                    .frame(width: 220, height: 48)
+                                    .background(colorBackground)
+                                    .cornerRadius(24)
+                            }
+                            
+                            Button(action: {
+                               
+                            }){
+                                Text("View Reserved List")
+                                    .foregroundColor(Color.white)
+                                    .padding()
                                     .frame(width: 220, height: 48)
                                     .background(colorBackground)
                                     .cornerRadius(24)

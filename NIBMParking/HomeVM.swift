@@ -20,6 +20,10 @@ class HomeVM:ObservableObject{
     @Published var vipSlotList = [Slot]()
     
     @Published var vehicleNo:String?
+    @Published var isBooked:String?
+    @Published var isReserved:String?
+
+    
     @Published var slotId:String?
     
     func fetchSlots(completion: @escaping (_ status: Bool) -> ()){
@@ -38,7 +42,6 @@ class HomeVM:ObservableObject{
                     let slotId = slotObject?["slotId"]
                     let name  = slotObject?["name"]
                     let isVIP = slotObject?["isVIP"]
-                    let bookedBy  = slotObject?["bookedBy"]
    
                     
                     let slot = Slot(slotId: slotId as! String?, name: name as! String?, isVIP: isVIP as! String?)
@@ -72,6 +75,8 @@ class HomeVM:ObservableObject{
                     }
                     
                     self.vehicleNo = dict["vehicleNo"] as? String ??  ""
+                    self.isReserved = dict["isReserved"] as? String ??  ""
+                    self.isBooked = dict["isBooked"] as? String ??  ""
                     
                     completion(true)
 

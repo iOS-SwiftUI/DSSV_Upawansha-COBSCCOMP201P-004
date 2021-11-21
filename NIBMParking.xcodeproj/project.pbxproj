@@ -10,6 +10,8 @@
 		6CA04E316626007A2FB545FF /* Pods_NIBMParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */; };
 		8C0814BB274430E400E62CB3 /* ForgotPasswordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */; };
 		8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BC2744354D00E62CB3 /* SignUpVM.swift */; };
+		8C1921F9274A32CA0086EC3B /* ReservedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1921F8274A32CA0086EC3B /* ReservedListView.swift */; };
+		8C1921FC274A32E30086EC3B /* ReservedListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1921FB274A32E30086EC3B /* ReservedListVM.swift */; };
 		8C98AC352744B22600AD9D53 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8C98AC342744B22600AD9D53 /* RappleProgressHUD */; };
 		8C98AC372744BB0E00AD9D53 /* SlotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC362744BB0E00AD9D53 /* SlotModel.swift */; };
 		8C98AC392744BB3A00AD9D53 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC382744BB3A00AD9D53 /* HomeVM.swift */; };
@@ -51,12 +53,26 @@
 		8CF20746274968E0002CA20A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF20745274968DF002CA20A /* Launch Screen.storyboard */; };
 		8CF2074827496B39002CA20A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2074727496B39002CA20A /* WebViewModel.swift */; };
 		8CF2074A27496E0D002CA20A /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2074927496E0D002CA20A /* Terms.swift */; };
+		8CF20753274979E1002CA20A /* NIBM_ParkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF20752274979E1002CA20A /* NIBM_ParkingUITests.swift */; };
+		8CF20755274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF20754274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CF20756274979E1002CA20A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CA684F927413DFF00405DE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CA6850027413DFF00405DE9;
+			remoteInfo = NIBMParking;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4E39CEA54A66428F44CD2DB5 /* Pods-NIBMParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBMParking.debug.xcconfig"; path = "Target Support Files/Pods-NIBMParking/Pods-NIBMParking.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0814BA274430E400E62CB3 /* ForgotPasswordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVM.swift; sourceTree = "<group>"; };
 		8C0814BC2744354D00E62CB3 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		8C1921F8274A32CA0086EC3B /* ReservedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedListView.swift; sourceTree = "<group>"; };
+		8C1921FB274A32E30086EC3B /* ReservedListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedListVM.swift; sourceTree = "<group>"; };
 		8C98AC362744BB0E00AD9D53 /* SlotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotModel.swift; sourceTree = "<group>"; };
 		8C98AC382744BB3A00AD9D53 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		8C98AC3B2745394B00AD9D53 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
@@ -90,6 +106,9 @@
 		8CF20745274968DF002CA20A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8CF2074727496B39002CA20A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		8CF2074927496E0D002CA20A /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
+		8CF20750274979E1002CA20A /* NIBM ParkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NIBM ParkingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF20752274979E1002CA20A /* NIBM_ParkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_ParkingUITests.swift; sourceTree = "<group>"; };
+		8CF20754274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBM_ParkingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		937DB4894FB24AE5BE9B041F /* Pods-NIBMParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIBMParking.release.xcconfig"; path = "Target Support Files/Pods-NIBMParking/Pods-NIBMParking.release.xcconfig"; sourceTree = "<group>"; };
 		DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NIBMParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +131,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CF2074D274979E1002CA20A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -121,6 +147,15 @@
 				DDB0D71DC1B32BC039F9CE95 /* Pods_NIBMParking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C1921FA274A32CE0086EC3B /* ReservedList */ = {
+			isa = PBXGroup;
+			children = (
+				8C1921F8274A32CA0086EC3B /* ReservedListView.swift */,
+				8C1921FB274A32E30086EC3B /* ReservedListVM.swift */,
+			);
+			name = ReservedList;
 			sourceTree = "<group>";
 		};
 		8C98AC3A2744BC0D00AD9D53 /* Model */ = {
@@ -153,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				8CA6850327413DFF00405DE9 /* NIBMParking */,
+				8CF20751274979E1002CA20A /* NIBM ParkingUITests */,
 				8CA6850227413DFF00405DE9 /* Products */,
 				E3355210C60E977FE96AF7F3 /* Pods */,
 				41B9E803E56C97BC13D1F081 /* Frameworks */,
@@ -163,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8CA6850127413DFF00405DE9 /* NIBM Parking.app */,
+				8CF20750274979E1002CA20A /* NIBM ParkingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +327,7 @@
 			children = (
 				8CAFF1EB274229D800969B52 /* HomeView.swift */,
 				8C98AC382744BB3A00AD9D53 /* HomeVM.swift */,
+				8C1921FA274A32CE0086EC3B /* ReservedList */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -309,6 +347,15 @@
 				8CF2074927496E0D002CA20A /* Terms.swift */,
 			);
 			path = Terms;
+			sourceTree = "<group>";
+		};
+		8CF20751274979E1002CA20A /* NIBM ParkingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CF20752274979E1002CA20A /* NIBM_ParkingUITests.swift */,
+				8CF20754274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift */,
+			);
+			path = "NIBM ParkingUITests";
 			sourceTree = "<group>";
 		};
 		E3355210C60E977FE96AF7F3 /* Pods */ = {
@@ -352,6 +399,24 @@
 			productReference = 8CA6850127413DFF00405DE9 /* NIBM Parking.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8CF2074F274979E1002CA20A /* NIBM ParkingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CF20758274979E1002CA20A /* Build configuration list for PBXNativeTarget "NIBM ParkingUITests" */;
+			buildPhases = (
+				8CF2074C274979E1002CA20A /* Sources */,
+				8CF2074D274979E1002CA20A /* Frameworks */,
+				8CF2074E274979E1002CA20A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CF20757274979E1002CA20A /* PBXTargetDependency */,
+			);
+			name = "NIBM ParkingUITests";
+			productName = "NIBM ParkingUITests";
+			productReference = 8CF20750274979E1002CA20A /* NIBM ParkingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -364,6 +429,10 @@
 				TargetAttributes = {
 					8CA6850027413DFF00405DE9 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					8CF2074F274979E1002CA20A = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 8CA6850027413DFF00405DE9;
 					};
 				};
 			};
@@ -386,6 +455,7 @@
 			projectRoot = "";
 			targets = (
 				8CA6850027413DFF00405DE9 /* NIBMParking */,
+				8CF2074F274979E1002CA20A /* NIBM ParkingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -399,6 +469,13 @@
 				8CA6850927413E0000405DE9 /* Assets.xcassets in Resources */,
 				8CF20746274968E0002CA20A /* Launch Screen.storyboard in Resources */,
 				8CAEA9A52742B704005AC5EE /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF2074E274979E1002CA20A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,12 +518,14 @@
 				8C98AC392744BB3A00AD9D53 /* HomeVM.swift in Sources */,
 				8CF2074A27496E0D002CA20A /* Terms.swift in Sources */,
 				8CA6851327414BA400405DE9 /* LoginView.swift in Sources */,
+				8C1921F9274A32CA0086EC3B /* ReservedListView.swift in Sources */,
 				8CAFF1EF27422AAC00969B52 /* ProfileView.swift in Sources */,
 				8CAFF1DB27417CAA00969B52 /* SignUpView.swift in Sources */,
 				8CAEA9AD2742CA3A005AC5EE /* ProfileVM.swift in Sources */,
 				8C98AC372744BB0E00AD9D53 /* SlotModel.swift in Sources */,
 				8CAEA9AB2742C420005AC5EE /* AboutUs.swift in Sources */,
 				8C98AC3C2745394B00AD9D53 /* Booking.swift in Sources */,
+				8C1921FC274A32E30086EC3B /* ReservedListVM.swift in Sources */,
 				8CAEA9A72742B775005AC5EE /* CustomAlert.swift in Sources */,
 				8CAEA9912742B14B005AC5EE /* BookingVM.swift in Sources */,
 				8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */,
@@ -467,7 +546,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CF2074C274979E1002CA20A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF20753274979E1002CA20A /* NIBM_ParkingUITests.swift in Sources */,
+				8CF20755274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CF20757274979E1002CA20A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CA6850027413DFF00405DE9 /* NIBMParking */;
+			targetProxy = 8CF20756274979E1002CA20A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8CA6850D27413E0000405DE9 /* Debug */ = {
@@ -592,6 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NIBMParking/Preview Content\"";
@@ -626,6 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NIBMParking/Preview Content\"";
@@ -654,6 +752,50 @@
 			};
 			name = Release;
 		};
+		8CF20759274979E1002CA20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G72LNDR5BT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.em.iosTest.NIBM-ParkingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NIBMParking;
+			};
+			name = Debug;
+		};
+		8CF2075A274979E1002CA20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G72LNDR5BT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.em.iosTest.NIBM-ParkingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NIBMParking;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -671,6 +813,15 @@
 			buildConfigurations = (
 				8CA6851027413E0000405DE9 /* Debug */,
 				8CA6851127413E0000405DE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CF20758274979E1002CA20A /* Build configuration list for PBXNativeTarget "NIBM ParkingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF20759274979E1002CA20A /* Debug */,
+				8CF2075A274979E1002CA20A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

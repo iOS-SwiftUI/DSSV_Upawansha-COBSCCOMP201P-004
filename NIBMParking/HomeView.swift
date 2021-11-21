@@ -48,9 +48,21 @@ struct HomeView: View {
                                                     vm.getSlotData(slotId: slotItem.slotId ?? "") { status in
                                                         
                                                         if status{
-                                                            vm.isShowAlert = true
-                                                            vm.alertTitle = "Not Available"
-                                                            vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
+                                                            
+                                                            if vm.isBooked != "" {
+                                                                
+                                                                vm.isShowAlert = true
+                                                                vm.alertTitle = "Not Available"
+                                                                vm.alertMessage = "Already Booked \(vm.vehicleNo ?? "")"
+                                                                
+                                                            }else {
+                                                                
+                                                                vm.isShowAlert = true
+                                                                vm.alertTitle = "Not Available"
+                                                                vm.alertMessage = "Already Reserved \(vm.vehicleNo ?? "")"
+                                                            }
+                                                            
+                                                            
                                                         }else{
                                                             
                                                 
