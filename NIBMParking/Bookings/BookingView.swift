@@ -268,7 +268,7 @@ struct BookingView: View {
                             Button(action: {
                                 
                             }){
-                                Text("View Reserved List")
+                                Text("View Reserved and Booked List")
                                     .foregroundColor(Color.white)
                                     .padding()
                                     .frame(width: 220, height: 48)

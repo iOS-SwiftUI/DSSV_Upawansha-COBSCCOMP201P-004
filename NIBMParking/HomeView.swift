@@ -49,7 +49,7 @@ struct HomeView: View {
                                                         
                                                         if status{
                                                             
-                                                            if vm.isBooked != "" {
+                                                            if vm.isBooked != "" && vm.isBooked != "false" {
                                                                 
                                                                 vm.isShowAlert = true
                                                                 vm.alertTitle = "Not Available"
