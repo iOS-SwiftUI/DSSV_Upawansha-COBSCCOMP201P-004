@@ -32,6 +32,9 @@ class BookingVM :ObservableObject{
     @Published  var regNo: String = ""
     @Published  var slotNoText:String = "5"
     @Published var availabelVehicleNo:String?
+    @Published var statusBooked:String?
+    @Published var statusReserved:String?
+    
     
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
@@ -82,12 +85,12 @@ class BookingVM :ObservableObject{
             case .authorizedAlways,.authorizedWhenInUse:
                 print("Access")
                 return true
-
+                
             }
         }else{
             print("Location services are not enabled")
             return false
-
+            
         }
         
     }
@@ -149,6 +152,8 @@ class BookingVM :ObservableObject{
                 }
                 
                 self.availabelVehicleNo = dict["vehicleNo"] as? String ??  ""
+                self.statusBooked = dict["isBooked"] as? String ??  ""
+                self.statusReserved = dict["isReserved"] as? String ??  ""
                 
                 completion(true)
                 
