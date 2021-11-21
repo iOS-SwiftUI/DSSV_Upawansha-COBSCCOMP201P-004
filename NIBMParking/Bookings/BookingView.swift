@@ -17,8 +17,8 @@ struct BookingView: View {
     @StateObject var vm = BookingVM()
     @State  var slotNo:String?
     @State var navigateFrom = false
-    
-    
+    @State var isBookindListViewIsActive = false
+
     
     var body: some View {
         
@@ -211,11 +211,11 @@ struct BookingView: View {
                                                             if success{
                                                                 vm.isShowAlert = true
                                                                 vm.alertTitle = "Success"
-                                                                vm.alertMessage = "Reserved Succesfully !!"
+                                                                vm.alertMessage = "Booked Succesfully !!"
                                                             }else{
                                                                 vm.isShowAlert = true
                                                                 vm.alertTitle = "Error"
-                                                                vm.alertMessage = "Reserved failed !"
+                                                                vm.alertMessage = "Booked failed !"
                                                             }
                                                         }
                                                     }else{
@@ -265,15 +265,20 @@ struct BookingView: View {
                                     .cornerRadius(24)
                             }
                             
-                            Button(action: {
-                                
-                            }){
-                                Text("View Reserved and Booked List")
-                                    .foregroundColor(Color.white)
-                                    .padding()
-                                    .frame(width: 220, height: 48)
-                                    .background(colorBackground)
-                                    .cornerRadius(24)
+                            
+                            NavigationLink(destination:ReservedListView(vehicleNo:vm.vehicleNo), isActive: $isBookindListViewIsActive){
+                                Button(action: {
+                                    isBookindListViewIsActive.toggle()
+
+                                }){
+                                    Text("View Reserved and Booked List")
+                                        .foregroundColor(Color.white)
+                                        .padding()
+                                    // .frame(width: 220, height: 48)
+                                        .background(colorBackground)
+                                        .cornerRadius(24)
+                                        .lineLimit(2)
+                                }
                             }
                             
                             Spacer()

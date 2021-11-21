@@ -21,7 +21,7 @@ struct Booking: Codable {
     var isBooked:String?
     
     
-    public init(slotId:String?,regNo: String?,reservedLocationLongitude : String?,reservedLocationLatitude : String?,reservedTime: String?,bookedTime: String?,vehicleNo: String?,isBooked: String?) {
+    public init(slotId:String?,regNo: String?,reservedLocationLongitude : String?,reservedLocationLatitude : String?,reservedTime: String?,bookedTime: String?,vehicleNo: String?,isBooked: String?,isReserved:String?) {
         
         self.slotId = slotId
         self.regNo = regNo
@@ -31,7 +31,7 @@ struct Booking: Codable {
         self.bookedTime = bookedTime
         self.vehicleNo = vehicleNo
         self.isBooked = isBooked
-        
+        self.isReserved = isReserved
     }
     
     public enum CodingKeys: String, CodingKey {
@@ -44,6 +44,7 @@ struct Booking: Codable {
         case bookedTime = "bookedTime"
         case vehicleNo = "vehicleNo"
         case isBooked = "isBooked"
+        case isReserved = "isReserved"
         
     }
     
