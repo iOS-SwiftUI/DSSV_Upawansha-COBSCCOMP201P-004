@@ -41,6 +41,7 @@ struct BookingView: View {
                         
                         VStack(alignment: .center, spacing: 20) {
                             
+                            
                             HStack(spacing:20){
                                 
                                 CustomLabelAndNotEditableTextField(labelTxt: "Vehicle No.", valueText: $vm.vehicleNo)
