@@ -18,7 +18,7 @@ struct BookingView: View {
     @State  var slotNo:String?
     @State var navigateFrom = false
     @State var isBookindListViewIsActive = false
-
+    
     
     var body: some View {
         
@@ -55,7 +55,7 @@ struct BookingView: View {
                                 Spacer()
                                 Text("Slot No.")
                                     .font(.largeTitle)
-                                Text(vm.slotNoText ?? "")
+                                Text(vm.slotNoText )
                                     .font(.largeTitle)
                                 Spacer()
                             }
@@ -78,90 +78,47 @@ struct BookingView: View {
                             
                             
                             Button(action: {
+                                RappleActivityIndicatorView.startAnimating()
                                 
-                                let access = vm.checkLocationServiceEnabled()
-                                
-                                if access == true{
+                                vm.checkLocationAccess { success in
                                     
-                                    RappleActivityIndicatorView.startAnimating()
-                                    if vm.slotNoText != ""{
-                                        vm.getSlotData { status in
-                                            RappleActivityIndicatorView.stopAnimation()
-                                            if status{
-                                                if vm.availabelVehicleNo == nil{
-                                                    RappleActivityIndicatorView.startAnimating()
-                                                    
-                                                    guard let longitude = coordinate?.longitude else{
-                                                        self.locationManager.location?.coordinate
-                                                        return
-                                                    }
-                                                    
-                                                    guard let latitude = coordinate?.latitude else{
-                                                        self.locationManager.location?.coordinate
-                                                        return
-                                                    }
-                                                    
-                                                    let coordinate0 = CLLocation(latitude: latitude, longitude: longitude)
-                                                    let coordinate1 = CLLocation(latitude: 6.9027724, longitude: 79.8686713)
-                                                    
-                                                    let distanceInMeters = coordinate0.distance(from: coordinate1)
-                                                    let distanceInKilometers = distanceInMeters/1000
-                                                    
-                                                    print(distanceInMeters)// result is in meters
-                                                    
-                                                    if distanceInKilometers < 1 {
-                                                        vm.onlyReserveSlot(currentLongitude: longitude,currentLatitude:latitude) { success in
-                                                            RappleActivityIndicatorView.stopAnimation()
+                                    if success{
+                                        vm.checkSlotNumberAvilability { success in
+                                            if success{
+                                                
+                                                vm.latitude = coordinate?.latitude
+                                                vm.longitude = coordinate?.longitude
+                                                
+                                                vm.checkDistancetoPoint { success in
+                                                    if success{
+                                                        vm.checkSlotBookedOrReserved {  success in
                                                             if success{
-                                                                vm.isShowAlert = true
-                                                                vm.alertTitle = "Success"
-                                                                vm.alertMessage = "Reserved Succesfully !!"
+                                                                vm.onlyReserveSlot { success in
+                                                                    if success{
+                                                                        RappleActivityIndicatorView.stopAnimation()
+                                                                        print("reserved")
+                                                                    }else{
+                                                                        RappleActivityIndicatorView.stopAnimation()
+                                                                        
+                                                                    }
+                                                                }
                                                             }else{
-                                                                vm.isShowAlert = true
-                                                                vm.alertTitle = "Error"
-                                                                vm.alertMessage = "Reserved failed !"
+                                                                RappleActivityIndicatorView.stopAnimation()
+                                                                
                                                             }
                                                         }
                                                     }else{
                                                         RappleActivityIndicatorView.stopAnimation()
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Error"
-                                                        vm.alertMessage = "You are far from the NIBM parking"
                                                     }
-                                                    
-                                                }else{
-                                                    
-                                                    if vm.statusBooked != "false" && vm.statusBooked != ""{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Not Available"
-                                                        vm.alertMessage = "Already booked \(vm.availabelVehicleNo ?? "")"
-                                                    }else{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Not Available"
-                                                        vm.alertMessage = "Already Reserved \(vm.availabelVehicleNo ?? "")"
-                                                    }
-                                                    
                                                 }
-                                                
                                             }else{
-                                                print("Error !!!")
+                                                RappleActivityIndicatorView.stopAnimation()
                                             }
                                         }
                                     }else{
-                                        
-                                        vm.isShowAlert = true
-                                        vm.alertTitle = "Error"
-                                        vm.alertMessage = "Slot No Required"
+                                        RappleActivityIndicatorView.stopAnimation()
                                     }
-                                    
-                                    
-                                }else{
-                                    vm.isShowAlert = true
-                                    vm.alertTitle = "Location"
-                                    vm.alertMessage = "Please enable location services before add booking"
                                 }
-                                
-                                
                                 
                             }){
                                 Text("Reserve Slot")
@@ -173,87 +130,46 @@ struct BookingView: View {
                             
                             
                             Button(action: {
+                                RappleActivityIndicatorView.startAnimating()
                                 
-                                
-                                let access = vm.checkLocationServiceEnabled()
-                                
-                                if access == true{
+                                vm.checkLocationAccess { success in
                                     
-                                    RappleActivityIndicatorView.startAnimating()
-                                    if vm.slotNoText != ""{
-                                        vm.getSlotData { status in
-                                            RappleActivityIndicatorView.stopAnimation()
-                                            if status{
-                                                if vm.availabelVehicleNo == nil{
-                                                    RappleActivityIndicatorView.startAnimating()
-                                                    
-                                                    guard let longitude = coordinate?.longitude else{
-                                                        self.locationManager.location?.coordinate
-                                                        return
-                                                    }
-                                                    
-                                                    guard let latitude = coordinate?.latitude else{
-                                                        self.locationManager.location?.coordinate
-                                                        return
-                                                    }
-                                                    
-                                                    let coordinate0 = CLLocation(latitude: latitude, longitude: longitude)
-                                                    let coordinate1 = CLLocation(latitude: 6.9027724, longitude: 79.8686713)
-                                                    
-                                                    let distanceInMeters = coordinate0.distance(from: coordinate1)
-                                                    let distanceInKilometers = distanceInMeters/1000
-                                                    
-                                                    print(distanceInMeters)// result is in meters
-                                                    
-                                                    if distanceInKilometers < 1 {
-                                                        vm.reserveAndAdBookings(currentLongitude: longitude,currentLatitude:latitude) { success in
-                                                            RappleActivityIndicatorView.stopAnimation()
+                                    if success{
+                                        vm.checkSlotNumberAvilability { success in
+                                            if success{
+                                                
+                                                vm.latitude = coordinate?.latitude
+                                                vm.longitude = coordinate?.longitude
+                                                
+                                                vm.checkDistancetoPoint { success in
+                                                    if success{
+                                                        vm.checkSlotBookedOrReserved {  success in
                                                             if success{
-                                                                vm.isShowAlert = true
-                                                                vm.alertTitle = "Success"
-                                                                vm.alertMessage = "Booked Succesfully !!"
+                                                                vm.reserveAndAdBookings { success in
+                                                                    if success{
+                                                                        RappleActivityIndicatorView.stopAnimation()
+                                                                        print("reserved")
+                                                                    }else{
+                                                                        RappleActivityIndicatorView.stopAnimation()
+                                                                        
+                                                                    }
+                                                                }
                                                             }else{
-                                                                vm.isShowAlert = true
-                                                                vm.alertTitle = "Error"
-                                                                vm.alertMessage = "Booked failed !"
+                                                                RappleActivityIndicatorView.stopAnimation()
+                                                                
                                                             }
                                                         }
                                                     }else{
                                                         RappleActivityIndicatorView.stopAnimation()
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Error"
-                                                        vm.alertMessage = "You are far from the NIBM parking"
-                                                    }
-                                                    
-                                                }else{
-                                                    
-                                                    if vm.statusBooked != "false" && vm.statusBooked != ""{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Not Available"
-                                                        vm.alertMessage = "Already booked \(vm.availabelVehicleNo ?? "")"
-                                                    }else{
-                                                        vm.isShowAlert = true
-                                                        vm.alertTitle = "Not Available"
-                                                        vm.alertMessage = "Already Reserved \(vm.availabelVehicleNo ?? "")"
                                                     }
                                                 }
-                                                
                                             }else{
-                                                print("Error !!!")
+                                                RappleActivityIndicatorView.stopAnimation()
                                             }
                                         }
                                     }else{
-                                        
-                                        vm.isShowAlert = true
-                                        vm.alertTitle = "Error"
-                                        vm.alertMessage = "Slot No Required"
+                                        RappleActivityIndicatorView.stopAnimation()
                                     }
-                                    
-                                    
-                                }else{
-                                    vm.isShowAlert = true
-                                    vm.alertTitle = "Location"
-                                    vm.alertMessage = "Please enable location services before add booking"
                                 }
                                 
                             }){
@@ -269,7 +185,7 @@ struct BookingView: View {
                             NavigationLink(destination:ReservedListView(vehicleNo:vm.vehicleNo), isActive: $isBookindListViewIsActive){
                                 Button(action: {
                                     isBookindListViewIsActive.toggle()
-
+                                    
                                 }){
                                     Text("View Reserved and Booked List")
                                         .foregroundColor(Color.white)
