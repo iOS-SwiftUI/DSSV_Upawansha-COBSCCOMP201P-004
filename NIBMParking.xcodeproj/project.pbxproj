@@ -12,6 +12,7 @@
 		8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0814BC2744354D00E62CB3 /* SignUpVM.swift */; };
 		8C1921F9274A32CA0086EC3B /* ReservedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1921F8274A32CA0086EC3B /* ReservedListView.swift */; };
 		8C1921FC274A32E30086EC3B /* ReservedListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1921FB274A32E30086EC3B /* ReservedListVM.swift */; };
+		8C91E5F3274D330400D34C2A /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91E5F2274D330400D34C2A /* ProductCard.swift */; };
 		8C98AC352744B22600AD9D53 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8C98AC342744B22600AD9D53 /* RappleProgressHUD */; };
 		8C98AC372744BB0E00AD9D53 /* SlotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC362744BB0E00AD9D53 /* SlotModel.swift */; };
 		8C98AC392744BB3A00AD9D53 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC382744BB3A00AD9D53 /* HomeVM.swift */; };
@@ -48,8 +49,6 @@
 		8CAFF1EF27422AAC00969B52 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1EE27422AAC00969B52 /* ProfileView.swift */; };
 		8CAFF1F12742331F00969B52 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F02742331F00969B52 /* CustomTextField.swift */; };
 		8CAFF1F32742353A00969B52 /* CustomSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */; };
-		8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */; };
-		8CAFF1F92742956C00969B52 /* SlotComponentVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */; };
 		8CF20746274968E0002CA20A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF20745274968DF002CA20A /* Launch Screen.storyboard */; };
 		8CF2074827496B39002CA20A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2074727496B39002CA20A /* WebViewModel.swift */; };
 		8CF2074A27496E0D002CA20A /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2074927496E0D002CA20A /* Terms.swift */; };
@@ -73,6 +72,7 @@
 		8C0814BC2744354D00E62CB3 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		8C1921F8274A32CA0086EC3B /* ReservedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedListView.swift; sourceTree = "<group>"; };
 		8C1921FB274A32E30086EC3B /* ReservedListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedListVM.swift; sourceTree = "<group>"; };
+		8C91E5F2274D330400D34C2A /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		8C98AC362744BB0E00AD9D53 /* SlotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotModel.swift; sourceTree = "<group>"; };
 		8C98AC382744BB3A00AD9D53 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		8C98AC3B2745394B00AD9D53 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
@@ -101,8 +101,6 @@
 		8CAFF1EE27422AAC00969B52 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8CAFF1F02742331F00969B52 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureTextField.swift; sourceTree = "<group>"; };
-		8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotComponentHorizontal.swift; sourceTree = "<group>"; };
-		8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotComponentVertical.swift; sourceTree = "<group>"; };
 		8CF20745274968DF002CA20A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8CF2074727496B39002CA20A /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		8CF2074927496E0D002CA20A /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
@@ -297,10 +295,9 @@
 				8CAFF1E22742244500969B52 /* CustomHeader.swift */,
 				8CAFF1F02742331F00969B52 /* CustomTextField.swift */,
 				8CAFF1F22742353A00969B52 /* CustomSecureTextField.swift */,
-				8CAFF1F627428F4B00969B52 /* SlotComponentHorizontal.swift */,
-				8CAFF1F82742956C00969B52 /* SlotComponentVertical.swift */,
 				8CAEA98B27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift */,
 				8CAEA9A62742B775005AC5EE /* CustomAlert.swift */,
+				8C91E5F2274D330400D34C2A /* ProductCard.swift */,
 			);
 			name = Shared;
 			path = Auth;
@@ -530,12 +527,10 @@
 				8CAEA9912742B14B005AC5EE /* BookingVM.swift in Sources */,
 				8C0814BD2744354D00E62CB3 /* SignUpVM.swift in Sources */,
 				8C0814BB274430E400E62CB3 /* ForgotPasswordVM.swift in Sources */,
-				8CAFF1F727428F4B00969B52 /* SlotComponentHorizontal.swift in Sources */,
 				8CA6850727413DFF00405DE9 /* ContentView.swift in Sources */,
 				8CAEA98C27429D96005AC5EE /* CustomLabelAndNotEditableTextField.swift in Sources */,
 				8CAFF1DF2742140700969B52 /* ColorConstants.swift in Sources */,
 				8CAEA98927429801005AC5EE /* BookingView.swift in Sources */,
-				8CAFF1F92742956C00969B52 /* SlotComponentVertical.swift in Sources */,
 				8CAFF1E32742244500969B52 /* CustomHeader.swift in Sources */,
 				8CAEA9932742B2EA005AC5EE /* LoginVM.swift in Sources */,
 				8CAEA9A92742BFBE005AC5EE /* LocalUser.swift in Sources */,
@@ -543,6 +538,7 @@
 				8CAFF1D827417C8400969B52 /* ForgotPasswordView.swift in Sources */,
 				8CAFF1E92742295500969B52 /* BottomTabBar.swift in Sources */,
 				8CA6850527413DFF00405DE9 /* NIBMParkingApp.swift in Sources */,
+				8C91E5F3274D330400D34C2A /* ProductCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +688,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NIBMParking/Preview Content\"";
-				DEVELOPMENT_TEAM = G72LNDR5BT;
+				DEVELOPMENT_TEAM = 9584XYR28J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your current location to book a slot";
@@ -727,7 +723,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NIBMParking/Preview Content\"";
-				DEVELOPMENT_TEAM = G72LNDR5BT;
+				DEVELOPMENT_TEAM = 9584XYR28J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your current location to book a slot";

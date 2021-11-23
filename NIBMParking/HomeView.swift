@@ -41,7 +41,7 @@ struct HomeView: View {
                                     
                                     VStack{
                                         ForEach (vm.vipSlotList,id:\.slotId){ slotItem in
-                                            SlotComponentHorizontal(imageString:"VIP",textString:slotItem.name)
+                                            ProductCard(imageString: "VIP", textString: slotItem.name)
                                                 .onTapGesture {
                                                 
                                                     vm.slotId = slotItem.slotId
@@ -96,7 +96,7 @@ struct HomeView: View {
                                     
                                     VStack{
                                         ForEach (vm.normalSlotList,id:\.slotId){ slotItem in
-                                            SlotComponentHorizontal(imageString:"Normal",textString:slotItem.name)
+                                            ProductCard(imageString: "Normal", textString: slotItem.name)
                                                 .onTapGesture {
                                                     vm.slotId = slotItem.slotId
                                                     
