@@ -13,6 +13,7 @@
 		8C1921F9274A32CA0086EC3B /* ReservedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1921F8274A32CA0086EC3B /* ReservedListView.swift */; };
 		8C1921FC274A32E30086EC3B /* ReservedListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1921FB274A32E30086EC3B /* ReservedListVM.swift */; };
 		8C91E5F3274D330400D34C2A /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C91E5F2274D330400D34C2A /* ProductCard.swift */; };
+		8C91E5F5274DECA500D34C2A /* NIBM_ParkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF20752274979E1002CA20A /* NIBM_ParkingUITests.swift */; };
 		8C98AC352744B22600AD9D53 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8C98AC342744B22600AD9D53 /* RappleProgressHUD */; };
 		8C98AC372744BB0E00AD9D53 /* SlotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC362744BB0E00AD9D53 /* SlotModel.swift */; };
 		8C98AC392744BB3A00AD9D53 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98AC382744BB3A00AD9D53 /* HomeVM.swift */; };
@@ -52,7 +53,6 @@
 		8CF20746274968E0002CA20A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF20745274968DF002CA20A /* Launch Screen.storyboard */; };
 		8CF2074827496B39002CA20A /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2074727496B39002CA20A /* WebViewModel.swift */; };
 		8CF2074A27496E0D002CA20A /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2074927496E0D002CA20A /* Terms.swift */; };
-		8CF20753274979E1002CA20A /* NIBM_ParkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF20752274979E1002CA20A /* NIBM_ParkingUITests.swift */; };
 		8CF20755274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF20754274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -546,7 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF20753274979E1002CA20A /* NIBM_ParkingUITests.swift in Sources */,
+				8C91E5F5274DECA500D34C2A /* NIBM_ParkingUITests.swift in Sources */,
 				8CF20755274979E1002CA20A /* NIBM_ParkingUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
